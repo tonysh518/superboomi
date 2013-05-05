@@ -1,0 +1,19 @@
+.jspContainer { overflow: hidden; position: relative; }
+.jspPane { position: absolute; }
+.jspVerticalBar {background: none; width: 5px; right: 2px; position: absolute; top: 0; height: 100%;}
+.product_detail_right .jspVerticalBar {background: url(../images/jsp_bar.gif) repeat-y center; width: 5px; right: 2px; position: absolute; top: 0; height: 100%;}
+.jspHorizontalBar {background: transparent; width: 8px; bottom: 2px; position: absolute; left: 0; width: 100%;}
+.jspVerticalBar *, .jspHorizontalBar * { margin: 0; padding: 0; }
+.jspCap { display: none; }
+.jspHorizontalBar .jspCap { float: left; }
+.jspTrack { position: relative; }
+.topbox .jspTrack {background:url(../images/scrolltrack2.gif) repeat-y center}
+.jspDrag { background: #feca79 url(../images/scrollbar_bg.gif) no-repeat center; -moz-border-radius: 4px; border-radius: 4px; position: relative; top: 0; left: 0; cursor: pointer; }
+.topbox .jspDrag {background:#79726e;}
+.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag { float: left; height: 100%; }
+.jspArrow { background: #50506d; text-indent: -20000px; display: block; cursor: pointer; }
+.jspArrow.jspDisabled { cursor: default; background: #80808d; }
+.jspVerticalBar .jspArrow { height: 16px; }
+.jspHorizontalBar .jspArrow { width: 16px; float: left; height: 100%; }
+.jspVerticalBar .jspArrow:focus { outline: none; }
+.jspCorner { background: #eeeef4; float: left; height: 100%; }

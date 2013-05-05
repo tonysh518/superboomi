@@ -1,0 +1,690 @@
+body,ul,ol,dl,dd,dir,h1,h2,h3,h4,h5,h6,p,pre,blockquote,hr,figure{
+	margin:0;
+	padding:0;
+	font-size: 100%;
+	vertical-align:baseline;
+
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+article, aside, dialog, figure, footer, header, hgroup, nav, section {
+	display:block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+
+audio:not([controls]) {
+    display: none;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+
+[hidden] {
+    display: none;
+}
+html{
+  -webkit-tap-highlight-color: transparent; /* Add vertical scrollbar  Keeps page centered in all browsers regardless of content height */
+  /* Define maximum text display as 100% to document Corrects text displayed oddly after orientation change in handheld browsers */
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  font-size: 100.1%;/*To prevent bugs in IE and Opera */
+  height: 100%;/*Percentage of body in IE height need to set this value in html*/
+  overflow-y: scroll;/*Ensure that all browsers display the vertical scroll bar*/
+}
+
+body, button, input, select, textarea {
+  font-family: sans-serif;
+}
+
+body {
+  
+  font: 10px/1.625 "American Typewriter", "Century Gothic","Helvetica Neue", Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+/*============================================================================
+ * Remove text-shadow in selection highlight
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ * You will change the Background-color and font color
+ * Not Supper browers for IE6-8
+ *============================================================================*/
+
+
+/*============================================================================
+ *Reset Heading
+ *============================================================================*/
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+/*============================================================================
+ *Improves readability of pre-formatted text in all browsers
+ *============================================================================*/
+pre {
+  white-space: pre;/*CSS2*/
+  white-space: pre-wrap;/*CSS2.1*/
+  white-space: pre-line;/*CSS3*/
+  word-wrap: break-word;/*IE*/
+}
+
+/**============================================================================
+  *Position subscript and superscript content without affecting line-height
+  *============================================================================*/
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+/*============================================================================
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ *============================================================================*/
+abbr[title],
+acronym[title],
+dfn[title] {
+	cursor: help;
+	border-bottom: 1px solid;
+}
+a {-webkit-transition-duration:0.3s;-moz-transition-duration:0.3s;-ms-transition-duration:0.3s;-o-transition-duration:0.3s;transition-duration:0.3s;}
+a abbr,
+a acronym {
+	text-transform: uppercase;
+	font-size: 0.769em;/*font-size:10px;*/
+	letter-spacing: 0.1em;
+}
+/*============================================================================
+ * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
+ *============================================================================*/
+b,
+strong,
+.bolder {
+  font-weight: bold;
+}
+
+
+/*============================================================================
+ * Addresses styling not present in S5, Chrome
+ *============================================================================*/
+dfn,
+em,
+.italic {
+  font-style: italic;
+}
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+/*============================================================================
+ * Compatible with each horizontal line of the browser
+ *============================================================================*/
+hr {
+	background: #ddd;/*Change the horizontal line*/
+	color: #ddd;/*Must be same backgrond-color*/
+	clear:both;/*clear float*/
+	float: none;/*cancel the default for float*/
+	width: 100%;/*define the width*/
+	height: 1px;/*Change the height*/
+	line-height: 1px;/*Clear small height for ie6*/
+	font-size: 0;/*Clear small height for ie6*/
+	border: none 0;/*Cancel default border style*/
+	margin:1em 0;
+}
+
+/*============================================================================
+ * Addresses styling not present in IE6/7/8/9
+ *============================================================================*/
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*============================================================================
+ *Redeclare monospace font family
+ *============================================================================*/
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/*============================================================================
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ *============================================================================ */
+q {
+  quotes: none;
+}
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+small { font-size: 85%; }
+
+address {
+	margin-top: 1.538em;/*20px*/
+	font-style: italic;
+}
+
+del {
+	color: #000;
+}
+
+/*============================================================================
+ * Lists
+ *============================================================================*/
+li {
+ margin-left: 1.538em;/*font-size:13px;margin-left:20px*/
+ list-style-position: outside;
+}
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: square;
+}
+ul ul ul {
+  list-style-type: circle;
+}
+ol {
+  list-style-type: decimal;
+}
+ol ol {
+  list-style-type: lower-roman;
+}
+ol ol ol {
+  list-style-type:upper-roman;
+}
+
+li ul,
+li ol {
+	margin: 0 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/*ul and ol don't have any list style*/
+.unstyled {
+	margin-left: 0;
+}
+
+.unstyled li{
+  list-style: none outside none;
+  margin-left: 0;
+}
+
+.unstyled ul,
+.unstyled ol {
+	margin-left: 0;
+}
+
+dl {
+	margin: 0 0 1.5em 0;
+}
+
+dl dt {
+  font-weight: bold;
+}
+dl dd {
+  margin-left: 1.538em; /*font-size:13px;margin-left:20px*/
+}
+
+/*============================================================================
+ * 1. Improve image quality when scaled in IE7
+ * 2. Remove the gap between images and borders on image containers
+ *============================================================================*/
+img {
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+a img {
+  border: 0 none;
+}
+/*============================================================================
+ * Correct overflow not hidden in IE9
+ *============================================================================*/
+svg:not(:root) {
+  overflow: hidden;
+}
+/*============================================================================
+ * table
+ *============================================================================*/
+th,td {
+  vertical-align: middle;
+}
+th {
+  text-align: center;
+  font-weight:bold;
+}
+tbody th {
+  text-align: left;
+  font-weight: bold;
+}
+td {
+  text-align: left;
+}
+tfoot {
+  font-style: italic;
+}
+
+/* =============================================================================
+ *   Forms
+ * ========================================================================== */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+input, select {
+  cursor: pointer;
+}
+
+input[type='text'],
+input[type='password'] {
+  cursor: text;
+}
+
+/* =============================================================================
+ *   outline define style
+ * ========================================================================== */
+:focus {
+  outline: none 0;
+}
+
+/* =============================================================================
+ *   Links
+ * ========================================================================== */
+a,a:link {
+  color: #0069d6;
+  text-decoration: none;
+  outline: none;
+}
+a:link {
+  -webkit-tap-highlight-color:
+  #ff5e99;
+}
+a:visited {
+  outline: none;
+}
+a:hover {
+  color:#0050a3;
+}
+
+a:hover,
+a:active {
+  outline: none;
+}
+/*==============================================================
+ * lfloat=>	float left
+ * rfloat=> float right
+ *=============================================================*/
+.fr{
+	float:right;
+	display: inline;
+}
+.fl{
+    float:left;
+	display: inline;
+}
+/*=================================================================
+ * fss => small font size
+ * fsm => medium font size
+ * fsl => large font size
+ * fsxl => x-large font size
+ * fsxxl => xx-large font size
+ *=================================================================*/
+.fss{
+	font-size: 0.769em;/*10px*/
+}
+.fsm{
+	font-size: 0.923em;/*12px*/
+}
+.fsl{
+	font-size: 1.077em;/*14px*/
+}
+.fsxl{
+	font-size: 1.308em;/*17px*/
+}
+.fsxxl{
+	font-size: 1.462em;/*19px*/
+}
+/*===============================================================================
+ * clear and clearfix => clear:both
+ * clearLeft => clear:left
+ * clearRiht => clear:rigth
+ *===============================================================================*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  overflow:hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.clear {
+	clear:both;
+	display:block;
+	overflow:hidden;
+	visibility:hidden;
+	height:0px;
+	font-size:0;
+	line-height: 0;
+}
+
+.clearLeft {
+	clear:left;
+}
+
+.clearRight {
+	clear:right;
+}
+
+/* =============================================================================
+ *   Non-semantic helper classes
+ *  Please define your styles before this section.
+ *  ========================================================================== */
+
+/* For image replacement */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+.ir br {
+  display: none;
+}
+
+/* Hide for both screenreaders and browsers*/
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.block {
+}
+
+.inline {
+	display: inline !important;
+}
+
+.inlineBlock {
+	display: inline-block !important;
+	*display: inline;
+	*zoom: 1;
+}
+
+/*  Hide only visually, but have it available for screenreaders*/
+.visuallyhidden {
+  border: 0 none !important;
+  clip: rect(1px 1px 1px 1px);/*IE<8*/
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+
+/*============================================================
+ *text align helps
+ *a,v,p= align,vertical,position
+ *l,r,c,j => left,right,center,justify
+ *t,m,b,bl, => top,middle,bottom,baseline
+ *r,a,s => relative,absolute,static
+ *============================================================*/
+.ar {
+	text-align:right;
+}
+
+.al {
+	text-align: left;
+}
+
+.ac {
+	text-align: center;
+}
+
+.aj {
+	text-align: justify;
+}
+
+.vt {
+	vertical-align: top;
+}
+
+.vm{
+	vertical-align: middle;
+}
+
+.vb {
+	vertical-align: bottom;
+}
+
+.vbl {
+	vertical-align:baseline;
+}
+
+.pr {
+	position: relative;
+}
+.pa {
+	position: absolute;
+}
+.ps {
+	position: static;
+}
+
+/*===============================================================
+ *	IMAGES
+ *  markup
+ *    <p><img class="left" alt="" src="img.jpg"> text </p>
+ *===============================================================*/
+
+img.fl{
+	margin:0 0.615em 0 0;
+}
+
+img.fr	{
+	margin:0 0 0 0.615em;
+}
+
+
+
+/*===========================================================================
+ *Spaceing
+ *spacing helpers
+ *p,m = padding,margin
+ *a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+ *xs,s,m,l,xl,xxl,n = x-small(5px),small(10px),medium(15px),large(20px),x-large(25px),xx-large(30px),none(0px)
+ *==========================================================================*/
+
+ /*padding and margin all*/
+.paxs{padding:5px;}
+.pas {padding: 10px;}
+.pam{padding:15px;}
+.pal{padding:20px;}
+.paxl{padding: 25px;}
+.paxxl{padding: 30px;}
+
+.maxs{margin:5px;}
+.mas {margin: 10px;}
+.mam{margin:15px;}
+.mal{margin:20px;}
+.maxl{margin: 25px;}
+.maxxl{margin: 30px;}
+
+/*padding and margin top*/
+.ptxs{padding-top:5px;}
+.pts{padding-top:10px;}
+.ptm{padding-top:15px;}
+.ptl{padding-top:20px;}
+.ptxl{padding-top:25px;}
+.ptxxl{padding-top:30px;}
+
+.mtxs{margin-top:5px;}
+.mts{margin-top:10px;}
+.mtm{margin-top:15px;}
+.mtl{margin-top:20px;}
+.mtxl{margin-top:25px;}
+.mtxxl{margin-top:30px;}
+
+/*padding and margin right*/
+.prxs{padding-right:5px;}
+.prs{padding-right:10px;}
+.prm{padding-right:15px;}
+.prl{padding-right:20px;}
+.prxl{padding-right:25px;}
+.prxxl{padding-right:30px;}
+
+.mrxs{margin-right:5px;}
+.mrs{margin-right:10px;}
+.mrm{margin-right:15px;}
+.mrl{margin-right:20px}
+.mrxl{margin-right:25px;}
+.mrxxl{margin-right:30px;}
+
+/*pdding and margin bottom*/
+.pbxs{padding-bottom:5px;}
+.pbs{padding-bottom:10px;}
+.pbm{padding-bottom:15px;}
+.pbl{padding-bottom:20px;}
+.pbxl{padding-bottom:25px;}
+.pbxxl{padding-bottom:30px;}
+
+.mbxs{margin-bottom:5px;}
+.mbs{margin-bottom:10px;}
+.mbm{margin-bottom:15px;}
+.mbl{margin-bottom:20px;}
+.mbxl{margin-bottom:25px;}
+.mbxxl{margin-bottom:30px;}
+
+/*padding and margin left*/
+.plxs{padding-left:5px;}
+.pls{padding-left:10px;}
+.plm{padding-left:15px;}
+.pll{padding-left:20px;}
+.plxl{padding-left:25px;}
+.plxxl{padding-left:30px;}
+
+.mlxs{margin-left:5px;}
+.mls{margin-left:10px;}
+.mlm{margin-left:15px;}
+.mll{margin-left:20px;}
+.mlxl{margin-left:25px;}
+.mlxxl{margin-left:30px;}
+
+/*padding and margin horizontal*/
+.phxs{padding-left:5px;padding-right:5px;}
+.phs{padding-left:10px;padding-right:10px;}
+.phm{padding-left:15px;padding-right:15px;}
+.phl{padding-left:20px;padding-right:20px;}
+.phxl{padding-left:25px;padding-right:25px;}
+.phxxl{padding-left:30px;padding-right:30px;}
+
+.mhxs{margin-left:5px;margin-right:5px;}
+.mhs{margin-left:10px;margin-right:10px;}
+.mhm{margin-left:15px;margin-right:15px;}
+.mhl{margin-left:20px;margin-right:20px;}
+.mhxl{margin-left:25px;margin-right:25px;}
+.mhxxl{margin-left:30px;margin-right:30px;}
+
+/*padding and margin vertical*/
+.pvxs{padding-top:5px;padding-bottom:5px;}
+.pvs{padding-top:10px;padding-bottom:10px;}
+.pvm{padding-top:15px;padding-bottom:15px;}
+.pvl{padding-top:20px;padding-bottom:20px;}
+.pvxl{padding-top:25px;padding-bottom:25px;}
+.pvxxl{padding-top:30px;padding-bottom:30px;}
+
+.mvxs{margin-top:5px;margin-bottom:5px;}
+.mvs{margin-top:10px;margin-bottom:10px;}
+.mvm{margin-top:15px;margin-bottom:15px;}
+.mvl{margin-top:20px;margin-bottom:20px;}
+.mvxl{margin-top:25px;margin-bottom:25px;}
+.mvxxl{margin-top:30px;margin-bottom:30px;}
+
+/*clear margin and padding*/
+.first{margin-left:0 !important;}
+.last{margin-right:0 !important;}
+.top{margin-top:0 !important;}
+.bottom{margin-bottom:0 !important;}
+

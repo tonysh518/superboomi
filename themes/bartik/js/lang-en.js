@@ -1,0 +1,10 @@
+var $login_validate_email = Drupal.t("Mail address not correct.");
+var $login_validate_email2 = Drupal.t("Email address doesn\'t exist.");
+var $login_validate_email3 = Drupal.t("Please check your email, find link to change password.");
+var $login_validate_username = Drupal.t("Please enter username or email.");
+var $login_validate_password = Drupal.t("Please enter password.");
+var $login_validate_password2 = Drupal.t("Please enter confirm password");
+var $login_validate_password3 = Drupal.t("Password are not same.");
+var $login_error_msg = Drupal.t('Wrong username or password. <div class="forgotpass">Forget password?</div>');
+var $ie6msg = Drupal.t('You are using ie6, please upgrade to newer version to get best experience.');
+var $login_vote = Drupal.t('Login to vote the photo');

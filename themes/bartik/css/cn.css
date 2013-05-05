@@ -1,0 +1,17 @@
+#link2appwall {background:#ffc547 url(../images/title_app_link_cn.png) no-repeat 4px 8px;width:343px;height:40px;display:block;text-indent:-999em;margin:0 0 0 318px;}
+
+header nav {float:right;margin:0;}
+header nav ul {width:567px}
+header nav li {float:left;list-style:none;margin:0 22px 0 0;}
+header nav li a {background:url(../images/nav_cn.gif) no-repeat;display:block;text-indent:-999em;margin:0 0 0 0;-webkit-transition:none;-moz-transition:none;-ms-transition:none;-o-transition:none;transition:none;height:33px;}
+header nav li.nav1 a {width:65px;background-position:0 10px}
+header nav li.nav2 a {width:128px;background-position:-85px 10px}
+header nav li.nav3 a {width:127px;background-position:-272px 10px}
+header nav li.nav4 a {width:60px;background-position:-442px 10px}
+header nav li.nav5 a {width:99px;background-position:-564px 10px;margin:0;}
+header nav li.nav5 {margin:0;}
+header nav li.nav1:hover > a,header nav li.nav1 > a.actived {background-position:0 -20px}
+header nav li.nav2:hover > a,header nav li.nav2 > a.actived {background-position:-85px -20px}
+header nav li.nav3:hover > a,header nav li.nav3 > a.actived {background-position:-272px -20px}
+header nav li.nav4:hover > a,header nav li.nav4 > a.actived {background-position:-442px -20px}
+header nav li.nav5:hover > a,header nav li.nav5 > a.actived {background-position:-564px -20px;margin:0;}
