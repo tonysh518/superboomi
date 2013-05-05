@@ -1,0 +1,9 @@
+name = Superboomi Heartbeat
+description =  heartbeat.
+package = Superboomi Services
+dependencies[] = heartbeat
+dependencies[] = heartbeat_defaults
+
+core = 7.x
+
+

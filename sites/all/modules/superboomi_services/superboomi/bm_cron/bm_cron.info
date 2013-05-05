@@ -1,0 +1,6 @@
+name = Superboomi Cron Job
+description = Superboomi Cron Job
+package = Superboomi Services
+core = 7.x
+
+

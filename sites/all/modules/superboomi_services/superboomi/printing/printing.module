@@ -1,0 +1,44 @@
+<?php
+// note_service.module
+
+/**
+* Implementation of hook_services_resources().
+*/
+function printing_services_resources() {
+  return array(
+    'printing' => array(
+      'create' => array(
+        'help' => 'Creates a printing',
+        'file' => array('file' => 'inc', 'module' => 'printing'),
+        'callback' => '_printing_create',
+        'access callback' => '_printing_access',
+        'access arguments' => array('create'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'node',
+            'type' => 'struct',
+            'description' => 'The printing object',
+            'source' => 'data',
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+function printing_view_alter(&$output, $views)
+{
+    echo 111;
+    print_r($items);
+}
+
+function printing_services_request_preprocess_alter(&$output, $views,&$variables) {
+   //print_r($variables);
+}
+
+function printing_services_views_execute_view_alter(){
+    print 222;
+}
+?>

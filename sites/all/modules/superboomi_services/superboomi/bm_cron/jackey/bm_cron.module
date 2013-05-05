@@ -1,0 +1,149 @@
+<?php
+
+/**
+ * @file
+ */
+
+function bm_cron_init() {
+	$timestamp_of_week = 7 * 24 * 60 * 60;
+	$expired = variable_get('bm_cron_flag', REQUEST_TIME);
+
+	// if (!(REQUEST_TIME - $expired >= $timestamp_of_week)) {
+	// 	return;
+	// }
+
+	// Get one week flag.
+	$timestamp_before_week = REQUEST_TIME - $timestamp_of_week;
+	// Just for testing.
+	$timestamp_before_week = 0;
+
+	$history_flags = get_user_array_of_flags_history($timestamp_before_week);
+
+	dpm($history_flags);
+
+	variable_set('bm_cron_flag', REQUEST_TIME);
+}
+
+/**
+ * Implement hook_cron()
+ */
+function bm_cron_cron() {
+	$timestamp_of_week = 7 * 24 * 60 * 60;
+	$expired = variable_get('bm_cron_flag', REQUEST_TIME);
+
+	if (!(REQUEST_TIME - $expired >= $timestamp_of_week)) {
+		return;
+	}
+
+	// Get one week flag.
+	$timestamp_before_week = REQUEST_TIME - $timestamp_of_week;
+	// Just for testing.
+	//$timestamp_before_week = 0;
+
+	$history_flags = get_user_array_of_flags_history($timestamp_before_week);
+	$header = array(
+		array('data' => t('Picture name')),
+		array('data' => t('Users that like')),
+	);
+	$rows = array();
+	foreach ($history_flags  as $user_id_of_picture => $history_flag) {
+		$user_of_picture = user_load($user_id_of_picture);
+
+		foreach ($history_flag as $flag_detail) {
+			$user_name = array();
+			foreach ($flag_detail['flaged_users'] as $flaged_user) {
+				$user_name[] = $flaged_user->name;
+			}
+			$rows[] = array(
+				$flag_detail['content']->title, implode(',', $user_name),
+			);
+		}
+
+		$mail_body = theme('table', array('header' => $header, 'rows' => $rows));
+		pet_send_mail(
+			'notify_user_when_picture_be_liked', 
+			array('mail' => $user_of_picture->mail, 'uid' => $user_of_picture->uid),
+			array('nid' => NULL, 'body' => $mail_body)
+		);
+	}
+
+	variable_set('bm_cron_flag', REQUEST_TIME);
+}
+
+function get_user_flags_history($start_timestamp) {
+	// First, get fid from name
+	$row = db_select("flags", 'f')->fields('f')->condition('f.name', 'lke_picture')->execute()->fetchAssoc();
+	if ($row) {
+		$fid = $row['fid'];
+	}
+	else {
+		return array();
+	}
+
+	// Then get the contents that with flags count happend last week.
+	$rows = db_query("SELECT content_id, group_concat(uid) as uids
+		from {flag_content}
+		where content_type = 'node'
+			and `timestamp` > :timestamp
+			and fid = :fid 
+		group by content_id", array(':timestamp' => intval($start_timestamp), ':fid' => $fid));
+
+
+	$users_flag_statistis = array();
+	while ($row = $rows->fetchAssoc()) {
+		$uids = explode(',', $row['uids']);
+		$content_id = $row['content_id'];
+		$node = node_load($content_id);
+		$users_flag_statistis[$node->uid][] = array(
+			'content' => $node,
+			'flaged_users' => user_load_multiple($uids),
+		);
+	}	
+
+	return $users_flag_statistis;
+}
+
+
+function get_user_array_of_flags_history($start_timestamp) {
+	// First, get fid from name
+	$row = db_select("flags", 'f')->fields('f')->condition('f.name', 'lke_picture')->execute()->fetchAssoc();
+	if ($row) {
+		$fid = $row['fid'];
+	}
+	else {
+		return array();
+	}
+
+	// Then get the contents that with flags count happend last week.
+	$rows = db_query("SELECT content_id, group_concat(uid) as uids
+		from {flag_content}
+		where content_type = 'node'
+			and `timestamp` > :timestamp
+			and fid = :fid 
+		group by content_id", array(':timestamp' => intval($start_timestamp), ':fid' => $fid));
+
+
+	$flaged_users_uids = array();
+	while ($row = $rows->fetchAssoc()) {
+		$uids = explode(',', $row['uids']);
+		$content_id = $row['content_id'];
+		$node = node_load($content_id);
+		if (!isset($flaged_users_uids[$node->uid])) {
+			$flaged_users_uids[$node->uid] = array();
+		}
+		foreach ($uids as $uid) {
+			if (array_search($uid, $flaged_users_uids[$node->uid]) === FALSE) {
+				$flaged_users_uids[$node->uid][] = $uid;
+			}
+		}
+	}
+	$ret = array();
+	foreach ($flaged_users_uids as $uid => $flaged_uids) {
+		$ret[$uid] = array(
+			'user' => user_load($uid),
+			'flaged_users' => user_load_multiple($flaged_uids),
+		);
+	}
+
+	return $ret;
+}

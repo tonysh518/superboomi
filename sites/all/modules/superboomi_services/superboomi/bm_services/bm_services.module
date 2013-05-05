@@ -1,0 +1,892 @@
+<?php
+//
+
+// debug function.
+function debug_info($object) {
+	$file = fopen('/var/log/services', 'a+');
+	fwrite($file, print_r($object, TRUE));
+	fclose($file);
+}
+
+/**
+ * Implements hook_menu().
+ */
+function bm_services_menu() {
+	return array(
+		'bm_services' => array(
+			'page callback' => 'bm_services_test_page',
+			'access callback' => TRUE,
+		),
+		'bm_services_update_user_picture' => array(
+			'page callback' => 'update_user_picture',
+			'access callback' => TRUE,
+		),
+		'bm_services_update_user_picture_crop' => array(
+			'page callback' => 'update_user_picture_crop',
+			'access callback' => TRUE,
+		),
+		'bm_services_update_username' => array(
+			'page callback' => 'update_username',
+			'access callback' => TRUE,
+		),
+		'node/%node/publish' => array(
+			'page callback' => 'bm_services_publich_toggle_node',
+			'page arguments' => array(1, 2),
+			'access callback' => 'user_access',
+			'access arguments' => array('publish node'),
+		),
+		'node/%node/unpublish' => array(
+			'page callback' => 'bm_services_publich_toggle_node',
+			'page arguments' => array(1, 2),
+			'access callback' => 'user_access',
+			'access arguments' => array('unpublish node'),
+		),
+	);
+}
+
+/**
+ * Menu callback.
+ */
+function bm_services_publich_toggle_node($node, $action) {
+	if ($action == 'publish') {
+		$node->status = 1;
+		node_save($node);
+	}
+	else if ($action = 'unpublish') {
+		$node->status = 0;
+		node_save($node);
+	}
+
+	return 'success';
+}
+
+/**
+ * Implements hook_permission().
+ */
+function bm_services_permission() {
+	return array(
+		'publish node' => array(
+			'title' => t("Publish Node"),
+			'restrict access' => TRUE,
+		),
+		'unpublish node' => array(
+			'title' => t('Unpublish Node'),
+		),
+	);
+}
+
+function bm_services_test_page() {
+	print_r(_node_resource_retrieve_list(array('field_boomi_terms' => 1)));
+
+	return 'hello world';
+}
+
+// Menu callback
+function update_user_picture() {
+	$uid = $_POST['uid'];
+  	$validators = array();
+	// Let the file module handle the upload and moving.
+	if (!$file = file_save_upload('picture_upload', $validators, FALSE, FILE_EXISTS_RENAME) ) {  
+		print json_encode(array('error' => 'Failed to upload file.', 'code' => 406));
+		die();
+	}
+	$edit_user = user_load($uid);
+	$edit_user->picture = $file;
+	user_save($edit_user);
+	$file = file_load($edit_user->picture);
+	print json_encode(array('uri' => $file->uri, 'url' => file_create_url($file->uri)));
+	die();
+}
+
+function update_user_picture_crop() {
+	$uri = $_POST['uri'];
+	$x = $_POST['x'];
+	$y = $_POST['y'];
+	$width = $_POST['width'];
+	$height = $_POST['height'];
+  	$path = drupal_realpath($uri);
+	if ($width && $height && isset($x) && isset($y)) {
+		crop_picture($path, $x, $y, $width, $height);
+	}
+	print json_encode(array('url' => $path));
+	die();
+}
+
+function update_username() {
+	$uid = $_POST['uid'];
+	$username = $_POST['username'];
+	$account = user_load_by_name($username);
+	if($account)
+	{
+		print json_encode(array('error' => 'Duplicate username', 'code' => 406));
+		die();
+	}
+	$account = user_load($uid);
+  	$edit = array('name'=>$username);
+	$account = user_save($account,$edit);
+	print json_encode($account);
+	die();
+}
+
+function check_username() {
+	$username = $_POST['username'];
+	$account = user_load_by_name($username);
+	if($account)
+	{
+		print json_encode(array('error' => 'Duplicate username', 'code' => 406));
+		die();
+	}
+}
+
+/**
+ * Iplements hook_views_api()
+ */
+function bm_services_views_api() {
+  return array(
+    'api' => 3.0,
+    'path' => drupal_get_path('module', 'bm_services') . '/includes',
+  );
+}
+
+function bm_services_error($message, $code = '500') {
+	return array('error' => $message, 'code' => $code);
+}
+
+/**
+ * Implements hook_services_resources().
+ */
+function bm_services_services_resources() {
+	$definitions = array(
+		'user' => array(
+			'actions' => array(
+				'simple_register' => array(
+					'help' => t('Simple Create User'),
+					'callback' => '_user_resource_simple_create',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'mail',
+							'type' => 'string',
+							'description' => 'The register user mail address',
+							'optional' => FALSE,
+							'source' => 'data'
+						)
+					),
+				),
+				'simple_login' => array(
+					'help' => t('Simple User Login'),
+					'callback' => '_user_resource_simple_login',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'mail',
+							'type' => 'string',
+							'description' => 'The register user mail address',
+							'optional' => FALSE,
+							'source' => 'data'
+						)
+					),
+				),
+				'simple_create' => array(
+					'help' => t('Simple User Create'),
+					'callback' => '_user_resource_simple_create_account',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'name',
+							'type' => 'string',
+							'description' => 'The user name',
+							'source' => 'data',
+							'optional' => FALSE,
+						),
+						array(
+							'name' => 'pass',
+							'type' => 'string',
+							'description' => 'The user password',
+							'source' => 'data',
+							'optional' => FALSE,
+						),
+						array(
+							'name' => 'mail',
+							'type' => 'string',
+							'description' => 'The user mail',
+							'source' => 'data',
+							'optional' => FALSE,
+						),
+					),
+				),
+				'simple_lostpassword' => array(
+					'help' => t('User Lost Password'),
+					'callback' => '_user_resource_simple_lostpassword',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'mail',
+							'type' => 'string',
+							'description' => 'The email of account',
+							'source' => 'data',
+							'optional' => FALSE
+						),
+					),
+				),
+				'simple_update' => array(
+					'help' => t('User Update'),
+					'callback' => '_user_resource_simple_update_pass',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'uid',
+							'type' => 'int',
+							'description' => '.',
+							'source' => 'data',
+							'optional' => FALSE
+						),
+						array(
+							'name' => 'pass',
+							'type' => 'string',
+							'description' => '.',
+							'source' => 'data',
+							'optional' => FALSE,
+						),
+					),
+				),
+			),
+		),
+		'node' => array(
+			'actions' => array(
+				'simple_create' => array(
+					'help' => t('Simple Create node'),
+					'callback' => '_node_resource_simple_create',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'title',
+							'type' => 'string',
+							'description' => 'Picture name',
+							'optional' => FALSE,
+							'source' => 'data'
+						),
+						array(
+							'name' => 'uid',
+							'type' => 'int',
+							'description' => 'The uid post picture',
+							'source' => 'data'
+						),
+					),
+				),
+				'simple_crop' => array(
+					'help' => t('Simple Crop Picture'),
+					'callback' => '_node_resource_simple_crop',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'nid',
+							'type' => 'int',
+							'required' => TRUE,
+							'description' => 'The nid of post picture',
+							'source' => 'data'
+						),
+					),
+				),
+				'simple_retrieve' => array(
+					'help' => t('Simple fetch list of pictures'),
+					'callback' => '_node_resource_retrieve_list',
+					'access callback' => 'static_true',
+					'args' => array(
+						array(
+							'name' => 'num',
+							'type' => 'int',
+							'description' => 'The number of pictures that you want to retrieve',
+							'optional' => TRUE,
+							'source' => 'data'
+						),
+						array(
+							'name' => 'offset',
+							'type' => 'int',
+							'description' => 'The postion of list in pictures table',
+							'optional' => TRUE,
+							'source' => 'data'
+						),
+						array(
+							'name' => 'uid',
+							'type' => 'int',
+							'description' => 'The user ID of pictures',
+							'optional' => TRUE,
+							'source' => 'data',
+						),
+					),
+				),
+			),
+		),
+	);
+
+	return $definitions;
+}
+
+function _user_resource_simple_update_pass($args) {
+	$uid = $args['uid'];
+	$pass = $args['pass'];
+	$account = array('pass' => $pass);
+	// Adds backwards compatability with regression fixed in #1083242
+	$account = _services_arg_value($account, 'data');
+
+	$account['uid'] = $uid;
+
+	$account_loaded = user_load($uid);
+
+	// Load the required includes for saving profile information
+	// with drupal_form_submit().
+	module_load_include('inc', 'user', 'user.pages');
+
+	// If a profile category was passed in, use it. Otherwise default
+	// to 'account' (for saving core user data.)
+	$category = 'account';
+	if (isset($account['category'])) {
+		$category = $account['category'];
+		unset($account['category']);
+	}
+
+	// Drop any passed in values into the $account var. Anything
+	// unused by the form just gets ignored. We handle roles and
+	// password separately.
+	foreach ($account as $key => $value) {
+		if ($key != 'pass' && $key != 'roles') {
+			$form_state['values'][$key] = $value;
+		}
+	}
+
+	// Prepare values of roles.
+	if (!isset($account['roles'])) {
+		$account['roles'] = $account_loaded->roles;
+	}
+	foreach ($account['roles'] as $key => $value) {
+		if (!empty($value)) {
+			$form_state['values']['roles'][$key] = $key;
+		}
+	}
+	unset($form_state['values']['roles'][2]);
+
+	// Prepare values for password.
+	if (isset($account['pass'])) {
+		$form_state['values']['pass']['pass1'] = $account['pass'];
+		$form_state['values']['pass']['pass2'] = $account['pass'];
+	}
+
+	// If user is changing name, make sure they have permission.
+	if (isset($account['name']) && $account['name'] != $account_loaded->name && !user_access('change own username')) {
+		return services_error(t('You are not allowed to change your username.'), 406);
+	}
+
+	$form_state['values']['op'] = variable_get('services_user_save_button_resource_update', t('Save'));
+	$form_state['values']['#user_category'] = $category;
+	$form_state['values']['#account'] = $account_loaded;
+
+	$ret = drupal_form_submit('user_profile_form', $form_state, $account_loaded, $category);
+
+	// Error if needed.
+	if ($errors = form_get_errors()) {
+		return services_error(implode(" ", $errors), 406, array('form_errors' => $errors));
+	}
+	else {
+		services_remove_user_data($account);
+		return $account;
+	}
+}
+
+// lost password.
+function _user_resource_simple_lostpassword($args) {
+	$mail = $args['mail'];
+	$account = user_load_by_mail($mail);
+	if (!$account) {
+		return bm_services_error(t("Email wrong"), 500);
+	}
+	else {
+		// Mail one time login URL and instructions using current language.
+		$mail_ret = _user_mail_notify('password_reset', $account);
+		if ($mail_ret) {
+			return array('mailed' => 1);
+		}
+		else {
+			return array('mailed' => 0);
+		}
+	}
+}
+
+// simple create account. no email
+function _user_resource_simple_create_account($args) {
+	$user_name = $args['name'];
+	$pass = $args['pass'];
+	$mail = $args['mail'];
+	$new_account = new stdClass;
+	$new_account->mail = $mail;
+	$new_account->init = $mail;
+	$new_account->name = $user_name;
+	$new_account->pass = $pass;
+	$new_account->status = 1;
+	$new_account->access = REQUEST_TIME;
+	$new_account->roles = array();
+	$new_account->roles[2] = 'authenticated user';
+	try {
+		
+		$account = user_load_by_name($user_name);
+		if($account)
+		{
+			return bm_services_error('username exist', 500);
+		}
+		$account = user_save(NULL, (array)$new_account);
+		$edit = array('name'=>$user_name);
+		$account = user_save($account,$edit);
+		return $account;
+	}
+	catch (Exception $e) {
+		return bm_services_error($e->getMessage(), 500);
+	}
+
+}
+
+/**
+ * Get account by email.
+ */
+function _user_resource_simple_login($args) {
+	$mail = $args['mail'];
+	$query = db_query("SELECT * FROM {users} u where u.mail = :mail", array(':mail' => $mail));
+	$uid = 0;
+	foreach ($query as $row) {
+		$uid = $row->uid;
+	}
+	if ($uid == 0) {
+		return bm_services_error("user not found", 500);
+	}
+	return array('user' => user_load($uid));
+}
+
+// Retrieve pictures list.
+function _node_resource_retrieve_list($args) {
+	// we customer the views build code.
+	$views_picture = views_get_view('user_pictures');
+	$views_picture->set_display('block');
+	$filters = $views_picture->display_handler->get_option('filters');
+
+	if (isset($args['uid']) && is_numeric($args['uid'])) {
+		$uid_filter = array(
+			'id' => 'uid',
+			'table' => 'node',
+			'field' => 'uid',
+			'relationship' => 'node',
+			'group_type' => 'group',
+			'operator' => 'in',
+			'value' => array($args['uid']),
+			'group' => 1,
+			'exposed' => FALSE,
+			'is_grouped' => FALSE,
+		);
+		$filters = array_merge($filters, array('uid' => $uid_filter));
+		$views_picture->display_handler->set_option('filters', $filters);
+	}
+
+	if (isset($args['field_boomi_terms']) && is_numeric($args['field_boomi_terms'])) {
+		$term_filter = array(
+			'id' => 'field_boomi_terms_tid',
+			'table' => 'field_data_field_boomi_terms',
+			'field' => 'field_boomi_terms_tid',
+			'relationship' => 'node',
+			'group_type' => 'group',
+			'operator' => 'or',
+			'value' => array($args['field_boomi_terms']),
+			'group' => 1,
+			'exposed' => FALSE,
+			'is_grouped' => FALSE,
+			'vocabulary' => 'tags',
+			'hierarchy' => 0,
+			'type' => 'select'
+		);
+		$filters = array_merge($filters, array('field_boomi_terms_tid' => $term_filter));
+		$views_picture->display_handler->set_option('filters', $filters);
+	}
+
+	
+	$offset = isset($args['offset']) ? $args['offset'] : 0;
+	$num = isset($args['num']) ? $args['num'] : 10;
+
+  $pager = array(
+    'type' => 'full',
+    'options' => array(
+      'offset' => intval($offset)
+    ),
+  );
+  $pager['options']['items_per_page'] = $num;
+  $views_picture->display_handler->set_option('items_per_page', $num);
+  $views_picture->display_handler->set_option('offset', $offset);
+  $views_picture->display_handler->set_option('use_pager', TRUE);
+  $views_picture->display_handler->set_option('pager', $pager);
+
+  // Execute views.
+  $views_picture->execute();
+  $results = $views_picture->result;
+
+  $items = array();
+  foreach ($results as $result) {
+  	$item = array(
+  		'nid' => $result->nid,
+  		'title' => $result->node_title,
+  		'field_boomi_image' => file_create_url($result->field_field_boomi_image[0]['raw']['uri'])
+  	);
+  	$items[] = $item;
+  }
+  $total_count = $views_picture->query->pager->total_items;
+  $ret = array('items' => $items, 'total_count' => $total_count);
+  return $ret;
+}
+
+// simple_create resource create.
+function _user_resource_simple_create($account) {
+  // Adds backwards compatability with regression fixed in #1083242
+  $account = _services_arg_value($account, 'account');
+
+  // Load the required includes for saving profile information
+  // with drupal_form_submit().
+  module_load_include('inc', 'user', 'user.pages');
+
+  // register a new user
+  $form_state['values'] = $account;
+  // $form_state['values']['pass'] = array(
+  //   'pass1' => $account['pass'],
+  //   'pass2' => $account['pass'],
+  // );
+  $form_state['values']['op'] = variable_get('services_user_create_button_resource_create', t('Create new account'));
+
+  // execute the register form
+  drupal_form_submit('user_register_form', $form_state);
+  // find and store the new user into the form_state
+  if(isset($form_state['values']['uid'])) {
+    $form_state['user'] = user_load($form_state['values']['uid']);
+  }
+
+  // Error if needed.
+  if ($errors = form_get_errors()) {
+  	$mail = $account['mail'];
+  	$registered_account = user_load_by_mail($mail);
+    $error = bm_services_error(implode(" ", $errors), 406, array('form_errors' => $errors));
+    $error['uid'] = $registered_account->uid;
+    return $error;
+  }
+  else {
+    $user = array('uid' => $form_state['user']->uid);
+    if ($uri = services_resource_uri(array('user', $user['uid']))) {
+      $user['uri'] = $uri;
+    }
+    return $user;
+  }
+}
+
+// simple node create resource create.
+function _node_resource_simple_create($args) {
+	$width = @$args['width'];
+	$height = @$args['height'];
+	$x = @$args['x'];
+	$y = @$args['y'];
+
+	$field_name = 'field_boomi_image';
+	$term_field_name = 'field_boomi_terms';
+	$node_type = 'picture';
+
+	if (!isset($_FILES[$field_name]) && FALSE) {
+		return bm_services_error(t('Boomi image should not empty'), 500);
+	}
+	else {
+		list($files, $file_objs) = _node_resource_simple_file_save_upload($node_type, $field_name);
+	}
+	$file = $files[0];
+
+	if ($width && $height && $x && $y) {
+		//crop_picture($file['path'], $x = 50, $y = 50, $width = 200, $height = 200);
+	}
+	$node = (Object)null;
+	$node->type = $node_type;
+	node_object_prepare($node);
+	$node->title = mb_convert_encoding($args['title'], 'UTF-8', 'auto');
+	$node->language = 'en';
+	$node->uid = $args['uid'];
+	$node->{$term_field_name}[LANGUAGE_NONE][0] = $args['field_boomi_terms'];
+	$node->status = 0; //unpublish
+	$node->comment = 2;
+
+	$node->{$field_name}[LANGUAGE_NONE][0] = $file;
+	
+	$node->is_new = TRUE;
+	try {
+		$ret = node_save($node);
+	}
+	catch (Exception $e) {
+		return bm_services_error(t("Upload picture error"));
+	}
+	return array('nid' => $node->nid, 'uri' => $node->{$field_name}[LANGUAGE_NONE][0]['uri']);
+}
+
+// resource handler: crop image of node
+function _node_resource_simple_crop($args) {
+	$nid = $args['nid'];
+	$width = @$args['width'];
+	$height = @$args['height'];
+	$x = @$args['x'];
+	$y = @$args['y'];
+	$field_name = 'field_boomi_image';
+	$node = node_load($nid);
+	$path = drupal_realpath($node->{$field_name}[LANGUAGE_NONE][0]['uri']);
+	if ($width && $height && isset($x) && isset($y)) {
+		crop_picture($path, $x, $y, $width, $height);
+	}
+	return $path;
+}
+
+// Simple picture create function
+function _node_resource_simple_file_save_upload($node_type, $field_name) {
+	// Rerange files.
+	$copy_of_files = $_FILES;
+	$copy_of_files['files'] = array();
+
+	foreach ($_FILES as $file_name => $value) {
+		unset($copy_of_files[$file_name]);
+		$copy_of_files['files']['name'][$file_name] = $_FILES[$file_name]['name'];
+		$copy_of_files['files']['type'][$file_name] = $_FILES[$file_name]['type'];
+		$copy_of_files['files']['tmp_name'][$file_name] = $_FILES[$file_name]['tmp_name'];
+		$copy_of_files['files']['error'][$file_name] = $_FILES[$file_name]['error'];
+		$copy_of_files['files']['size'][$file_name] = $_FILES[$file_name]['size'];
+	}
+	$_FILES = $copy_of_files;
+
+  // The field_name on node_type should be checked in the access callback.
+  $instance = field_info_instance('node', $field_name, $node_type);
+       
+  $field = field_read_field($field_name);
+  $destination = file_field_widget_uri($field, $instance);
+
+  if (isset($destination) && !file_prepare_directory($destination, FILE_CREATE_DIRECTORY)) {
+    return bm_services_error(t('The upload directory %directory for the file field !name could not be created or is not accessible. A newly uploaded file could not be saved in this directory as a consequence, and the upload was canceled.', array('%directory' => $destination, '!name' => $field_name)));
+    
+  }
+
+  $validators = array(
+    'file_validate_extensions' =>  (array)$instance['settings']['file_extensions'],
+    'file_validate_size' => array(0 => parse_size($instance['settings']['max_filesize'])),
+  );
+
+  $files = $file_objs = array();
+  // Let the file module handle the upload and moving.
+  if (!$file = file_save_upload($field_name, $validators, $destination, FILE_EXISTS_RENAME) ) {  	
+    return bm_services_error(t('Failed to upload file. @upload', array('@upload' => $field_name)), 406);
+  }
+
+  if ($file->fid) {
+    // Add info to the array that will be returned/encdoed to xml/json.
+    $files[] = array(
+      'fid' => $file->fid,
+      'uri' => file_create_url($file->uri),
+      'path' => drupal_realpath($file->uri)
+    );
+    $file_objs[] = $file;
+  }
+  else {
+    return bm_services_error(t('An unknown error occurred'), 500);
+  }
+
+  return array($files, $file_objs);
+}
+
+/**
+ * Implements hook_node_insert()
+ */
+function bm_services_node_insert($node) {
+	// Get all admin user.
+	$query = db_select('users_roles', 'ur')
+		->fields('ur')
+		->condition('rid', 4)
+		->execute();
+		
+	try{
+	  	while ($row = $query->fetchAssoc()) {
+	  		$user = user_load($row['uid']);
+	  		@pet_send_mail(
+				'notify_admin_when_new_picture', 
+				array(array('mail' => $user->mail, 'uid' => $node->uid)),
+				array('nid' => $node->nid)
+			);
+	  	}
+	}
+	catch(Exception $e)
+	{
+		echo 111;
+	}
+}
+
+/**
+ * Implements hook_node_update()
+ */
+function bm_services_node_update($node) {
+	$old_node = node_load($node->nid);
+	
+	// publishing.
+	if ($old_node->status == 0 && $node->status == 1) {
+		$client_user = user_load($node->uid);
+		pet_send_mail(
+			'notify_admin_when_picture_publish', 
+			array(array('mail' => $client_user->mail, 'uid' => $node->uid)),
+			array('nid' => $node->nid)
+		);
+	}
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function bm_services_form_picture_node_form_alter(&$form, $form_state) {
+	// $form['actions']['submit']['#ajax'] = array(
+	// 	'event' => 'click',
+	// 	'callback' => 'ajax_save_node',
+	// );
+	// $form['actions']['submit']['#attached']['js'] = array(
+	// 	drupal_get_path('module', 'bm_services').'/bm_services.js'
+	// );
+}
+
+
+// Ajax save node.
+function ajax_save_node($form, $form_state) {
+	$node = node_form_submit_build_node($form, $form_state);
+	$insert = empty($node->nid);
+	node_save($node);
+
+	// Clear the page and block caches.
+	cache_clear_all();
+
+	$command = array(
+	    'command' => 'redirect',
+	    'settings' => array('url' => url('node/' . $node->nid), array('abosulte' => TRUE)),
+  	);
+
+	return array('#type' => 'ajax', '#commands' => array($command));
+}
+
+
+
+/**
+ * Implements hook_block_info().
+ */
+function bm_services_block_info() {
+	return array(
+		'bm_services_create_picture' => array(
+			'info' => t('Create Picture'),
+		),
+		'bm_services_user_picture' => array(
+			'info' => t('Upload User Picture'),
+		),
+	);
+}
+
+/**
+ * Implements hook_theme()
+ */
+function bm_services_theme() {
+	return array(
+		'bm_services_create_picture_form' => array(
+			'variables' => array('terms' => array()),
+			'template' => 'bm_services_create_picture_form',
+		),
+		'bm_services_user_picture_form' => array(
+			'variables' => array(),
+			'template' => 'bm_services_user_picture_form',
+		),
+		'bm_services_use_update_pass' => array(
+			'variables' => array(),
+			'template' => 'bm_services_use_update_pass',
+		),
+	);
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function bm_services_block_view($delta) {
+	if ($delta == 'bm_services_create_picture') {
+		$field = field_info_field('field_boomi_terms');
+		$terms_allowed = taxonomy_allowed_values($field);
+		//drupal_add_js(drupal_get_path('module', 'jquery_update').'/replace/misc/jquery.form.js');
+		//drupal_add_js(drupal_get_path('module', 'bm_services').'/bm_services.js');
+		return array(
+			'subject' => NULL,
+			'content' => theme('bm_services_create_picture_form', array('terms' => $terms_allowed)),
+		);
+	}
+	else if ($delta == 'bm_services_user_picture') {
+		//drupal_add_js(drupal_get_path('module', 'jquery_update').'/replace/misc/jquery.form.js');
+		//drupal_add_js(drupal_get_path('module', 'bm_services').'/bm_services.js');
+		return array(
+			'subject' => NULL,
+			'content' => theme('bm_services_user_picture_form'),
+		);
+	}
+}
+
+function static_true() {
+	return TRUE;
+}
+
+/**
+ * Crop image.
+ */
+function crop_picture($path, $x = 50, $y = 50, $width = 200, $height = 200) {
+	$info = getimagesize($path);
+
+	switch($info['mime']) {
+		case "image/gif":
+			$source = imagecreatefromgif($path);
+			$out_image = 'imagegif';
+			break;
+		case "image/jpeg":
+			$source = imagecreatefromjpeg($path);
+			$out_image = 'imagejpeg';
+			break;
+		case "image/png":
+			$source = imagecreatefrompng($path);
+			$out_image = 'imagepng';
+			break;
+	}
+	if (!$out_image) {
+		return FALSE;
+	}
+	$sizes = getimagesize($path);
+	$source_width = $sizes[0];
+	$source_height = $sizes[1];
+
+	$new_image = imagecreatetruecolor($width, $height);
+	imagecopy($new_image, $source, 0, 0, $x, $y, $width, $height);
+	if ($out_image == 'imagepng') {
+		$out_image($new_image, $path, 0);
+	}
+	else {
+		$out_image($new_image, $path, 90);
+	}
+
+	imagedestroy($source);
+	imagedestroy($new_image);
+}
+
+function bm_services_cron() {
+	
+}
+
+function bm_services_cron_queue_info() {
+  $queues['resend_email'] = array(
+    'worker callback' => 'sending_mail_callback',
+    'time' => 1, // time in second for each worker
+  );
+  return $queues;
+}
+
+function sending_mail_callback($data){
+	$message = drupal_mail('pet', $data['pet']->name, $data['params']['pet_to'], language_default(), $data['params'], $data['params']['pet_from']);
+  	if (!$message['result']) {
+    	$queue = DrupalQueue::get('resend_email');
+		$queue->createItem(array('pet'=>$data['pet'],'params'=>$data['params']));
+  	}
+}

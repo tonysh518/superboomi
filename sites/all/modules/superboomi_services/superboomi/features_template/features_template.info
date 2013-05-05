@@ -1,0 +1,10 @@
+name = Features template
+description = Mail template
+core = 7.x
+package = Features
+dependencies[] = entity
+dependencies[] = pet
+features[features_api][] = api:1
+features[pet][] = notify_admin_when_new_picture
+features[pet][] = notify_admin_when_picture_publish
+features[pet][] = notify_user_when_picture_be_liked

@@ -1,0 +1,29 @@
+<?php
+// note_service.module
+
+/**
+* Implementation of hook_services_resources().
+*/
+function storyidea_services_resources() {
+  return array(
+    'storyidea' => array(
+      'create' => array(
+        'help' => 'Creates a sotryidea',
+        'file' => array('file' => 'inc', 'module' => 'storyidea'),
+        'callback' => '_storyidea_create',
+        'access callback' => '_storyidea_access',
+        'access arguments' => array('create'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'body',
+            'type' => 'struct',
+            'description' => 'The storyidea object',
+            'source' => 'data',
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+}

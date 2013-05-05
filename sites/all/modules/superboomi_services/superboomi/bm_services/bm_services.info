@@ -1,0 +1,19 @@
+name = Superboomi REST Server
+description = Provides an extension for REST server.
+package = Superboomi Services
+core = 7.x
+version = 0.0.1beta
+
+; Files
+files[] = includes/views_handler_field_node_link_publish.inc
+files[] = includes/views_handler_field_node_link_unpublish.inc
+
+; Module Dependencies
+dependencies[] = rest_server
+dependencies[] = email_registration
+dependencies[] = features_picture
+dependencies[] = token
+dependencies[] = pet
+dependencies[] = ajax_register
+dependencies[] = flag
+dependencies[] = jquery_update

@@ -1,0 +1,9 @@
+name = Printing
+description = Services for the priting type.
+package = Superboomi Services
+core = 7.x
+
+
+dependencies[] = services
+files[] = storyidea.inc
+files[] = storyidea.module
