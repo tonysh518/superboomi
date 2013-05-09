@@ -27,3 +27,14 @@ function storyidea_services_resources() {
     ),
   );
 }
+
+function storyidea_services_view_alter($output){
+    foreach($output as $item){
+        if(!empty($item->users_node_picture))
+        {
+            $file = file_load($item->users_node_picture);
+            $path = image_style_url('20x20',$file->uri);
+            $item->users_node_picture = $path;
+        }
+    }
+}

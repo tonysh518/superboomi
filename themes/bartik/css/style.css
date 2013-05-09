@@ -987,12 +987,109 @@ color:#319efd;
 
 /* story idea */
 #storyidea_sent {display:none;}
+#form_storyidea {height:100px;z-index:999;position:relative;background:#ffc600;border:5px solid #ffae00;-webkit-border-radius: 7px;border-radius: 7px;padding:14px 14px 14px 310px;}
+#form_storyidea .idea_body {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position:absolute;height:25px;background:#fff5d2;border:5px solid #fff;-webkit-border-radius: 7px;border-radius: 7px; font-size:18px;font-family:'Chalkduster','Comic Sans MS';padding:10px;resize: none;
+}
+#form_storyidea .idea_body.opened {height:150px;}
+#form_storyidea .submit {
+    background: #2aa5d6; /* Old browsers */
+    background: -moz-linear-gradient(top,  #2aa5d6 0%, #1279a3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2aa5d6), color-stop(100%,#1279a3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #2aa5d6 0%,#1279a3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #2aa5d6 0%,#1279a3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #2aa5d6 0%,#1279a3 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #2aa5d6 0%,#1279a3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2aa5d6', endColorstr='#1279a3',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow: inset 0px 0px 5px 5px #127ba5;
+    box-shadow: inset 0px 0px 5px 5px #127ba5;
+    position:absolute;left:700px;width:152px;height:50px;border:5px solid #fff;-webkit-border-radius: 14px;border-radius: 14px;color:#fff;font-size:18px;font-family:'Chalkduster','Comic Sans MS';text-transform:uppercase;margin:0 0 0 15px;
+}
+#form_storyidea .icon_idea { position:absolute;left:-80px;top:-20px;}
+#form_storyidea .icon_boomi { position:absolute;left:140px;bottom:0;}
 #form_storyidea .errorMsg {display:none;}
 #form_storyidea .loadingMsg {display:none;}
+#storyidea_list {margin:0 auto;}
+#storyidea_list .storyidea_item {float:left;margin:10px;padding:15px;width:250px;height:194px;color:#fff;font-size:18px;font-family:'Chalkduster','Comic Sans MS';-webkit-box-shadow:  0px 0px 5px 5px #096889;box-shadow:  0px 0px 5px 5px #096889;}
+#storyidea_list .color_0 {background:#f6af06;border:5px solid #e48b00;}
+#storyidea_list .color_1 {background:#8dd30a;border:5px solid #70a709;}
+#storyidea_list .color_2 {background:#2c9dff;border:5px solid #1582df;}
+#storyidea_list .storyidea_item .like {background:url(../images/like_sprite.png) no-repeat 0 -34px;padding:0 0 0 30px;}
+#storyidea_list .storyidea_item .flagged_true {background-position: 0 0;}
 
 /* printing */
+.printing_wrap .printing_step {background:url(../images/printing_step.png) no-repeat;width:66px;height:68px;text-align:center;line-height:68px;left:-33px;top:-33px; position:absolute;color:#ffae00;font-size:28px;font-family:'Chalkduster','Comic Sans MS';}
+.printing_download_box {float:left;width:570px;height:260px;margin:30px 0 0 45px;z-index:999;position:relative;background:#ffc600;border:5px solid #ffae00;-webkit-border-radius: 7px;border-radius: 7px;}
+.printing_download_box h3 {color:#fff;font-size:18px;font-family:'Chalkduster','Comic Sans MS';text-transform:uppercase;}
+.printing_download_item {float:left;margin:0 10px;}
+.printing_download_item a.img {display:block;border:5px solid #ffedb0;}
+.printing_download_item a.download {margin:10px auto 0 auto;display:block;text-align:center;width:96px;height:29px;background:#ffae00;color:#fff;font-size:14px;font-family:'Chalkduster','Comic Sans MS';-webkit-border-radius: 7px;border-radius: 7px;}
+#from_upload_print  {float:left;width:240px;height:260px;margin:30px 0 0 45px;z-index:999;position:relative;background:#ffc600;border:5px solid #ffae00;-webkit-border-radius: 7px;border-radius: 7px;}
 #printing_sent {display:none;}
+#from_upload_print .icon_boomi {position: absolute;top:-50px;left:80px;}
 #from_upload_print .errorMsg {display:none;}
 #from_upload_print .loadingMsg {display:none;}
+#from_upload_print .file {width:175px;height:157px;margin:70px auto 0 auto;overflow:hidden;position:relative;cursor: pointer;background:url(../images/img_upload.gif) no-repeat 0 -10px;-moz-box-shadow:1px 1px 2px #ccc;-webkit-box-shadow:1px 1px 2px #ccc;box-shadow:1px 1px 2px #ccc;border:7px solid #fff;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;}
+#from_upload_print .selected {background:url(../images/img_upload2.gif) no-repeat 0 -34px;}
+#from_upload_print .file input {z-index: 999;
+    line-height: 0;
+    font-size: 300px;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -ms-filter: "alpha(opacity=0)";
+    cursor: pointer;
+    _cursor: hand;
+    margin: 0;
+    padding:0;}
+#printing_list {margin:0 auto;}
+#printing_list .printing_item {float:left;margin:10px;width:200px;height:200px;border:5px solid #fff;-webkit-box-shadow:  0px 0px 5px 5px #096889;box-shadow:  0px 0px 5px 5px #096889;}
+
 
 #watch_item_wrap { position:absolute;left:-100%;top:0;width:100%;height:100%;background:#fff;}
+
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope .isotope-item {
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -ms-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    -ms-transition-property: height, width;
+    -o-transition-property: height, width;
+    transition-property: height, width;
+}
+
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property:    -moz-transform, opacity;
+    -ms-transition-property:     -ms-transform, opacity;
+    -o-transition-property:      -o-transform, opacity;
+    transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -ms-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+}

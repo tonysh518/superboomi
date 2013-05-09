@@ -4,14 +4,14 @@
     <list default="true" id="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" name="Default" comment="" />
     <ignored path="superboomi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/page--storyidea.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367726884548" ignored="false" />
-    <file path="/bm_storyidea.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367745168081" ignored="false" />
-    <file path="/style.css" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367754023309" ignored="false" />
+    <file path="/page--storyidea.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368070676888" ignored="false" />
+    <file path="/bm_storyidea.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368081323499" ignored="false" />
+    <file path="/style.css" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368088178955" ignored="false" />
     <file path="/a.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367731198812" ignored="false" />
-    <file path="/storyidea.module" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367735282250" ignored="false" />
+    <file path="/storyidea.module" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368082426704" ignored="false" />
     <file path="/a.dummy" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367743427955" ignored="false" />
-    <file path="/page--printing.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367736840491" ignored="false" />
-    <file path="/bm_printing.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367745262773" ignored="false" />
+    <file path="/page--printing.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368087712946" ignored="false" />
+    <file path="/bm_printing.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368084788895" ignored="false" />
     <file path="/printing.module" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367743710880" ignored="false" />
     <file path="/html.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367744875259" ignored="false" />
     <file path="/bm_like.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367745050005" ignored="false" />
@@ -20,6 +20,7 @@
     <file path="/page--readwatch.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367752970582" ignored="false" />
     <file path="/import-user.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367756996325" ignored="false" />
     <file path="/import-twitter.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367766196064" ignored="false" />
+    <file path="/services_views.resource.inc" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368067353990" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,66 +40,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bm_printing.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_printing.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="25" selection-start="2404" selection-end="2404" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="import-twitter.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../brdg/data/import-twitter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="27" selection-start="3005" selection-end="3005" vertical-scroll-proportion="0.42591023">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bm_storyidea.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="43" selection-start="2560" selection-end="2560" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page--storyidea.tpl.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--storyidea.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="221" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readwatch.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/js/readwatch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="37" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="9" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1366790356000" expanded="false" signature="27562:27576" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/bartik/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="997" column="93" selection-start="62489" selection-end="62489" vertical-scroll-proportion="0.0">
+            <state line="1033" column="67" selection-start="66143" selection-end="66143" vertical-scroll-proportion="0.45986623">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bm_like.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_like.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="25" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,20 +61,53 @@
       <file leaf-file-name="bm_readwatch.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="7" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
+            <state line="18" column="39" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views-view-fields--read-watch--block.tpl.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view-fields--read-watch--block.tpl.php">
+      <file leaf-file-name="bm_printing.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_printing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="10" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1367750596000" expanded="true" signature="471:517" placeholder="..." />
-                <marker date="1367750596000" expanded="true" signature="483:517" placeholder="..." />
-              </folding>
+            <state line="121" column="56" selection-start="3533" selection-end="3534" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bm_storyidea.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="145" column="46" selection-start="4248" selection-end="4248" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services_views.resource.inc" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/services_views/services_views.resource.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="174" column="20" selection-start="5022" selection-end="5022" vertical-scroll-proportion="-36.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="storyidea.module" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/storyidea/storyidea.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="15" selection-start="141" selection-end="141" vertical-scroll-proportion="-4.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page--printing.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--printing.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="31" selection-start="1101" selection-end="1118" vertical-scroll-proportion="-16.964285">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,7 +115,16 @@
       <file leaf-file-name="page--readwatch.tpl.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--readwatch.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="32" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page--storyidea.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--storyidea.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="30" selection-start="435" selection-end="445" vertical-scroll-proportion="-4.75">
               <folding />
             </state>
           </provider>
@@ -144,29 +140,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/services_views/services_views.module" />
-        <option value="$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/printing/printing.module" />
-        <option value="$PROJECT_DIR$/themes/bartik/templates/html.tpl.php" />
-        <option value="$PROJECT_DIR$/themes/bartik/js/bm_like.js" />
-        <option value="$PROJECT_DIR$/themes/bartik/templates/page--printing.tpl.php" />
-        <option value="$PROJECT_DIR$/themes/bartik/templates/page--storyidea.tpl.php" />
-        <option value="$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js" />
-        <option value="$PROJECT_DIR$/themes/bartik/js/bm_printing.js" />
-        <option value="$PROJECT_DIR$/themes/bartik/templates/page.tpl.php" />
         <option value="$PROJECT_DIR$/themes/bartik/readwatch/views-view-fields--read-watch--block.tpl.php" />
         <option value="$PROJECT_DIR$/themes/bartik/js/readwatch.js" />
         <option value="$PROJECT_DIR$/themes/bartik/templates/page--readwatch.tpl.php" />
-        <option value="$PROJECT_DIR$/themes/bartik/css/style.css" />
         <option value="$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js" />
         <option value="$PROJECT_DIR$/../brdg/data/import-user.php" />
         <option value="$PROJECT_DIR$/../brdg/data/import-twitter.php" />
+        <option value="$PROJECT_DIR$/sites/default/settings.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/services_views/services_views.resource.inc" />
+        <option value="$PROJECT_DIR$/themes/bartik/templates/page--storyidea.tpl.php" />
+        <option value="$PROJECT_DIR$/themes/bartik/js/jquery.debouncedresize.js" />
+        <option value="$PROJECT_DIR$/themes/bartik/bartik.info" />
+        <option value="$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/storyidea/storyidea.module" />
+        <option value="$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js" />
+        <option value="$PROJECT_DIR$/themes/bartik/js/bm_printing.js" />
+        <option value="$PROJECT_DIR$/themes/bartik/templates/page--printing.tpl.php" />
+        <option value="$PROJECT_DIR$/themes/bartik/css/style.css" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
-    <option name="y" value="22" />
+    <option name="x" value="153" />
+    <option name="y" value="64" />
     <option name="width" value="2540" />
     <option name="height" value="1357" />
   </component>
@@ -287,195 +283,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="readwatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bartik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bartik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi_services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi_services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi_services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="superboomi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="image_url_formatter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,8 +297,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../brdg" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -518,14 +326,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="22" width="2540" height="1357" extended-state="0" />
-    <editor active="false" />
+    <frame x="153" y="64" width="2540" height="1357" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979952" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2598236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2594226" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -598,110 +406,121 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_like.js">
+    <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/html.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="23" selection-start="1328" selection-end="1339" vertical-scroll-proportion="-16.964285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--printing.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="27" selection-start="248" selection-end="248" vertical-scroll-proportion="-2.7142856" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="32" selection-start="624" selection-end="624" vertical-scroll-proportion="-19.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--front.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="22" selection-start="9792" selection-end="9858" vertical-scroll-proportion="-24.428572" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--storyidea.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="221" vertical-scroll-proportion="-0.0">
+        <state line="219" column="21" selection-start="7854" selection-end="7854" vertical-scroll-proportion="-12.214286">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_printing.js">
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/storyidea/storyidea.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="25" selection-start="2404" selection-end="2404" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view-fields--read-watch--block.tpl.php">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/js/jquery.debouncedresize.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="10" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
+        <state line="12" column="14" selection-start="384" selection-end="384" vertical-scroll-proportion="0.18858561">
           <folding>
-            <marker date="1367750596000" expanded="true" signature="471:517" placeholder="..." />
-            <marker date="1367750596000" expanded="true" signature="483:517" placeholder="..." />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--readwatch.tpl.php">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/bartik.info">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="32" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
+        <state line="43" column="40" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_like.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="25" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/services_views/services_views.resource.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="20" selection-start="5022" selection-end="5022" vertical-scroll-proportion="-36.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/storyidea/storyidea.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="15" selection-start="141" selection-end="141" vertical-scroll-proportion="-4.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Resource/boostrap/unify/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="419" selection-end="419" vertical-scroll-proportion="0.20287405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="39" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="43" selection-start="2560" selection-end="2560" vertical-scroll-proportion="0.0">
+        <state line="145" column="46" selection-start="4248" selection-end="4248" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/main.js">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_printing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="9" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1366790356000" expanded="false" signature="27562:27576" placeholder="..." />
-          </folding>
+        <state line="121" column="56" selection-start="3533" selection-end="3534" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/readwatch.js">
+    <entry file="file://$PROJECT_DIR$/../CAA-zh/sites/all/themes/adrupal/templates/page-investors.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="37" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.0">
+        <state line="207" column="68" selection-start="9299" selection-end="9302" vertical-scroll-proportion="0.5770548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--readwatch.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--printing.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="31" selection-start="1101" selection-end="1118" vertical-scroll-proportion="-16.964285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--storyidea.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="30" selection-start="435" selection-end="445" vertical-scroll-proportion="-4.75">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/bartik/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="997" column="93" selection-start="62489" selection-end="62489" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../brdg/data/import-user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="608" selection-end="686" vertical-scroll-proportion="0.14733277" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="7" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../brdg/data/import-twitter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="27" selection-start="3005" selection-end="3005" vertical-scroll-proportion="0.42591023">
+        <state line="1033" column="67" selection-start="66143" selection-end="66143" vertical-scroll-proportion="0.45986623">
           <folding />
         </state>
       </provider>

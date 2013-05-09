@@ -172,6 +172,8 @@ function services_views_execute_view($view_info) {
     }
   }
 
+  drupal_alter('services_view', $output);
+
   $view->destroy();
   return $output;
 }

@@ -60,7 +60,7 @@ $('#printing_sent a').click(function(e){
 });
 
 // Index printing views
-var tpl_printingItem = _.template('<div class="printing_item"><div class="name"><%= name %></div><a href="<%= bigimg %>"><img src="<%= img %>" /></a><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like"><%= likeCounter %></div></div>');
+var tpl_printingItem = _.template('<div class="printing_item"><a href="<%= bigimg %>"><img src="<%= img %>" /></a><div class="desc"><div class="name"><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like"><%= likeCounter %></div></div></div>');
 $.Printing().index(0, function(res){
     var printingList = $('#printing_list');
     for(index in res)
@@ -107,4 +107,25 @@ var bindPrintingEvents = function(){
             $(this).addClass('flagged');
         }
     });
+
+    // Initialize Isotope
+    $('#printing_list').isotope({
+        resizable: false,
+        masonry: {
+            columnWidth: 230
+        }
+    });
 }
+
+var bindStoryIdeaInit = function(){
+    $(window).on("debouncedresize",function(){
+        var columns = Math.floor( ( $('body').width() - 20) / 230 );
+        $('#printing_list').width( columns * 230 );
+        setTimeout(function(){
+            $('#printing_list').isotope('reLayout');
+        },300);
+    });
+    $(window).trigger("debouncedresize");
+}
+
+bindStoryIdeaInit();

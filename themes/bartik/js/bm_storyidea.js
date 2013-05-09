@@ -75,8 +75,9 @@ $('#storyidea_sent a').click(function(e){
 });
 
 
+
 // Index ideas views
-var tpl_ideaItem = _.template('<div class="storyidea_item"> <div class="name"><%= name %>\'s idea</div><div class="body"><%= body %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like"><%= likeCounter %></div></div>');
+var tpl_ideaItem = _.template('<div class="storyidea_item color_<%= randomId %>"> <div class="body"><%= body %></div><div class="name"><img src="<%= avatar %>" /><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like flagged_<%= flagged %>"><%= likeCounter %></div></div>');
 $.Storyidea().index(0, function(res){
     var storyIdeaList = $('#storyidea_list');
     for(index in res)
@@ -85,11 +86,14 @@ $.Storyidea().index(0, function(res){
         {
             res[index].flag_counts_node_count = 0;
         }
+        var randomId = Math.floor(Math.random()*3);
         storyIdeaList.append(tpl_ideaItem({
+            randomId: randomId,
             name:res[index].users_node_name,
             body:res[index].Body,
             likeCounter:res[index].flag_counts_node_count,
             nid:res[index].nid,
+            avatar:res[index].users_node_picture,
             flagged:res[index].views_php_6
         }));
     }
@@ -122,4 +126,32 @@ var bindStoryIdeaEvents = function(){
            $(this).addClass('flagged');
        }
     });
+    // Initialize Isotope
+    $('#storyidea_list').isotope({
+        resizable: false,
+        masonry: {
+            columnWidth: 310
+        }
+    });
 }
+
+var bindStoryIdeaInit = function(){
+    $('#form_storyidea .idea_body').focus(function(){
+        $(this).addClass('opened');
+    });
+    $('#form_storyidea .idea_body').blur(function(){
+        $(this).removeClass('opened');
+    });
+
+    $(window).on("debouncedresize",function(){
+        var columns = Math.floor( ( $('body').width() - 20) / 310 );
+        $('#storyidea_list').width( columns * 310 );
+        setTimeout(function(){
+            $('#storyidea_list').isotope('reLayout');
+        },300);
+    });
+    $(window).trigger("debouncedresize");
+}
+
+
+bindStoryIdeaInit();
