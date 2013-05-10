@@ -51,6 +51,17 @@ $.Printing().create(function(){
     loadingMsg.fadeOut();
 });
 
+$('#from_upload_print #field_image').on('change',function(){
+    $('#from_upload_print .file').fadeOut(300);
+    $('#from_upload_print .upload').delay(300).fadeIn(300);
+});
+
+$('#from_upload_print .upload a').on('click',function(e){
+    e.preventDefault();
+    $('#from_upload_print .upload').fadeOut(300);
+    $('#from_upload_print .file').delay(300).fadeIn(300);
+});
+
 $('#printing_sent a').click(function(e){
     e.preventDefault();
     $('#storyidea_sent').fadeOut(400);
@@ -60,7 +71,7 @@ $('#printing_sent a').click(function(e){
 });
 
 // Index printing views
-var tpl_printingItem = _.template('<div class="printing_item"><a href="<%= bigimg %>"><img src="<%= img %>" /></a><div class="desc"><div class="name"><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like"><%= likeCounter %></div></div></div>');
+var tpl_printingItem = _.template('<div class="printing_item"><a href="<%= bigimg %>"><img src="<%= img %>" /></a><div class="desc"><div class="desc_wrap"><div class="name"><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like"><%= likeCounter %></div></div></div></div>');
 $.Printing().index(0, function(res){
     var printingList = $('#printing_list');
     for(index in res)

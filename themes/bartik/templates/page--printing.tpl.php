@@ -28,7 +28,10 @@
         <div class="printing_step">2</div>
         <div class="icon_boomi"><img src="<?php print $base_path;?>pic/si_boomi.png" /></div>
         <div class="file"><input type="file" name="field_image" id="field_image" /></div>
-        <input name="" type="submit" value="Send" />
+        <div class="upload">
+            <input name="" type="submit" value="Send" />
+            <a href="###">Select a new one</a>
+        </div>
         <div class="errorMsg"><?php print t('Select your printing');?></div>
         <div class="loadingMsg"><?php print t('Your printing is on the way, please wait a while!');?></div>
     </form>
