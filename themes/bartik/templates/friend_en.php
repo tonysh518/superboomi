@@ -73,16 +73,13 @@
                         </div>
                     </div>
                     
-                    <div id="friends_howie" class="friends_item">
-                        <div class="friends_big_pic"><img src="pic/friends/gallery/howie.jpg" width="314" height="400" /></div>
+
+
+                    <div id="friends_hao" class="friends_item">
+                        <div class="friends_big_pic"><img src="pic/friends/gallery/hao.jpg" width="314" height="400" /></div>
                         <div class="friends_desc">
-                            <div class="friends_name">Howie</div>
-                            <div class="friends_intro">
-                           Howie的个头在同龄人中大得多，从来没有人敢欺负他。而同他相处过的人都知道，Howie其实很胆小，害怕虫子，害怕棒球，害怕过马路，害怕关灯睡觉。
-上体育课的时候你会看到一个穿着铠甲的大块头，那一定是Howie。
-Howie记性不太好，常常会忘记带书本，却从来不会忘记带安全帽。喜欢的食物是双层芝士汉堡，还可以再加一层芝士和牛肉吗？
-                            </div>
-                            <div class="friends_dream"><strong>梦想:</strong> 额… 拳击手</div>
+                            <div class="friends_name">Hao Hao</div>
+                            <div class="friends_intro">Small in size but big in ambition, Hao Hao longs to gain the recognition that his classmates earn for being smarter, funnier and more athletic than he is. Hao Hao feels the best way to get ahead of the competition is to eliminate it, which usually pits him head-to-head against BOOMi. A stickler when it comes to punctuality and measuring results, Hao Hao hates BOOMi’s tardiness and loves Mia’s academic prowess. </div>
                         </div>
                     </div>
                     
@@ -126,12 +123,17 @@ Queenie对魔法世界很着迷，遇见同好的时候会变得滔滔不绝。�
                             <div class="friends_dream"><strong>梦想:</strong> 诺贝尔文学奖</div>
                         </div>
                     </div>
-                    
-                    <div id="friends_hao" class="friends_item">
-                        <div class="friends_big_pic"><img src="pic/friends/gallery/hao.jpg" width="314" height="400" /></div>
+
+                    <div id="friends_howie" class="friends_item">
+                        <div class="friends_big_pic"><img src="pic/friends/gallery/howie.jpg" width="314" height="400" /></div>
                         <div class="friends_desc">
-                            <div class="friends_name">Hao Hao (mouse)</div>
-                            <div class="friends_intro">Small in size but big in ambition, Hao Hao longs to gain the recognition that his classmates earn for being smarter, funnier and more athletic than he is. Hao Hao feels the best way to get ahead of the competition is to eliminate it, which usually pits him head-to-head against BOOMi. A stickler when it comes to punctuality and measuring results, Hao Hao hates BOOMi’s tardiness and loves Mia’s academic prowess. </div>
+                            <div class="friends_name">Howie</div>
+                            <div class="friends_intro">
+                                Howie的个头在同龄人中大得多，从来没有人敢欺负他。而同他相处过的人都知道，Howie其实很胆小，害怕虫子，害怕棒球，害怕过马路，害怕关灯睡觉。
+                                上体育课的时候你会看到一个穿着铠甲的大块头，那一定是Howie。
+                                Howie记性不太好，常常会忘记带书本，却从来不会忘记带安全帽。喜欢的食物是双层芝士汉堡，还可以再加一层芝士和牛肉吗？
+                            </div>
+                            <div class="friends_dream"><strong>梦想:</strong> 额… 拳击手</div>
                         </div>
                     </div>
                 </div>
@@ -143,12 +145,12 @@ Queenie对魔法世界很着迷，遇见同好的时候会变得滔滔不绝。�
                     	<li><div class="box"><img title="Martin" class="tips" style="left:16px;" src="pic/friends/icon/martin.png" width="61" height="93" /></div></li>
                     	<li><div class="box"><img title="David" class="tips" style="left:0;" src="pic/friends/icon/david.png" width="92" height="91" /></div></li>
                     	<li><div class="box"><img title="Vinci" class="tips" style="left:10px;" src="pic/friends/icon/vinci.png" width="77" height="68" /></div></li>
-                    	<li><div class="box"><img title="Howie" class="tips" style="left:8px;" src="pic/friends/icon/howie.png" width="77" height="83" /></div></li>
+                        <li><div class="box"><img title="Hao Hao" class="tips" style="left:0;" src="pic/friends/icon/hao.png" width="95" height="68" /></div></li>
                     	<li><div class="box"><img title="James" class="tips" style="left:8px;" src="pic/friends/icon/james.png" width="79" height="126" /></div></li>
                     	<li><div class="box"><img title="Mia" class="tips" style="left:10px;" src="pic/friends/icon/mia.png" width="72" height="87" /></div></li>
                     	<li><div class="box"><img title="Kiki" class="tips" style="left:0;" src="pic/friends/icon/kiki.png" width="93" height="70" /></div></li>
                     	<li><div class="box"><img title="Queenie" class="tips" style="left:14px;" src="pic/friends/icon/queenie.png" width="63" height="88" /></div></li>
-                    	<li><div class="box"><img title="Hao Hao" class="tips" style="left:0;" src="pic/friends/icon/hao.png" width="95" height="68" /></div></li>
+                        <li><div class="box"><img title="Howie" class="tips" style="left:8px;" src="pic/friends/icon/howie.png" width="77" height="83" /></div></li>
                     </ul>
                 </div>
             </div>

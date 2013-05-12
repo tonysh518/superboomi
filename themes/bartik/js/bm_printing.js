@@ -26,29 +26,33 @@ $.Printing = function(){
 /* Views */
 
 // Printing views
-var errorMsg = $('#from_upload_print').find('.errorMsg');
-var loadingMsg = $('#from_upload_print').find('.loadingMsg');
-var submitBtn = $(this).find('input[type=submit]');
-var form = $('#from_upload_print');
-var sentMsg = $('#printing_sent');
+var $_Printing = {};
+$_Printing.errorMsg = $('#from_upload_print').find('.errorMsg');
+$_Printing.loadingMsg = $('#from_upload_print').find('.loadingMsg');
+$_Printing.submitBtn = $(this).find('input[type=submit]');
+$_Printing.form = $('#from_upload_print');
+$_Printing.sentMsg = $('#printing_sent');
+$_Printing.bear = $('#from_upload_print .icon_boomi');
+$_Printing.uploadBox = $('#from_upload_print .upload');
 
 $.Printing().create(function(){
     var field_image = $('#from_upload_print #field_image').val();
-    submitBtn.attr('disabled','disabled');
+    $_Printing.submitBtn.attr('disabled','disabled');
     if(_.isEmpty(field_image))
     {
-        errorMsg.fadeIn();
+        $_Printing.errorMsg.fadeIn();
         $('#from_upload_print').find('.errorMsg').fadeIn(400);
-        submitBtn.removeAttr('disabled');
+        $_Printing.submitBtn.removeAttr('disabled');
         return false;
     }
-    errorMsg.fadeOut();
-    loadingMsg.fadeIn(200);
+    $_Printing.errorMsg.fadeOut();
+    $_Printing.bear.fadeOut();
+    $_Printing.uploadBox.fadeOut(200);
+    $_Printing.loadingMsg.delay(200).fadeIn(200);
 },function(res){
-    form.fadeOut(400);
-    sentMsg.delay(400).fadeIn(400);
-    submitBtn.removeAttr('disabled');
-    loadingMsg.fadeOut();
+    $_Printing.submitBtn.removeAttr('disabled');
+    $_Printing.loadingMsg.fadeOut(200);
+    $_Printing.sentMsg.delay(200).fadeIn(200);
 });
 
 $('#from_upload_print #field_image').on('change',function(){
@@ -64,10 +68,11 @@ $('#from_upload_print .upload a').on('click',function(e){
 
 $('#printing_sent a').click(function(e){
     e.preventDefault();
-    $('#storyidea_sent').fadeOut(400);
-    form.delay(400).fadeIn(400);
-    form.find('#field_image').val('');
-    sentMsg.fadeOut();
+    $('#storyidea_sent').fadeOut(200);
+    $_Printing.form.find('.file').delay(200).fadeIn();
+    $_Printing.bear.delay(200).fadeIn();
+    $_Printing.form.find('#field_image').val('');
+    $_Printing.sentMsg.fadeOut();
 });
 
 // Index printing views
@@ -116,6 +121,16 @@ var bindPrintingEvents = function(){
         else
         {
             $(this).addClass('flagged');
+        }
+    });
+
+    $('#printing_list .printing_item').unbind('mouseenter').unbind('mouseleave');
+    $('#printing_list .printing_item').bind({
+        mouseenter: function(){
+            $(this).find('.desc').animate({bottom:-21},700,'easeOutElastic');
+        },
+        mouseleave: function(){
+            $(this).find('.desc').animate({bottom:-78});
         }
     });
 

@@ -3,13 +3,18 @@ global $user;
 global $language;
 $prefix = $language->prefix;
 $club_nodes = node_load_multiple(array(), array('type' => 'club','language' => $language->language));
+drupal_add_js($base_path.'themes/bartik/js/bm_like.js', array('scope' => 'footer', 'weight' => 3));
+drupal_add_js($base_path.'themes/bartik/js/bm_readwatch.js', array('scope' => 'footer', 'weight' => 4));
+drupal_add_js($base_path.'themes/bartik/js/bm_printing.js', array('scope' => 'footer', 'weight' => 4));
+drupal_add_js($base_path.'themes/bartik/js/bm_storyidea.js', array('scope' => 'footer', 'weight' => 4));
 ?>                     
 <header>
     	<div class="header_bg png">
             <div class="header_wrap png">
             	<div class="text_logo link2home"></div>
-                <div class="logo link2home png">
-                	<div class="logo_bear0 active"><img width="123" src="images/logo-bear0.gif"></div>
+                <div class="logo1"><img width="90" src="images/logo-bear0.gif"></div>
+                <!--div class="logo link2home png">
+                	<div class="logo_bear0 active"></div>
                 	<div class="logo_bear1"><img width="123" src="images/logo-bear1.gif"></div>
                 	<div class="logo_bear2"><img width="148" src="images/logo-bear2.gif"></div>
                 	<div class="logo_bear3"><img width="194" src="images/logo-bear3.gif"></div>
@@ -24,14 +29,21 @@ $club_nodes = node_load_multiple(array(), array('type' => 'club','language' => $
                 	<div class="logo_bg4"><img width="98" height="97" src="images/logo-bg4.gif"></div>
                 	<div class="logo_bg5"><img width="98" height="97" src="images/logo-bg5.gif"></div>    
                 </div>
-                <div class="logo_shadow"></div>
+                <div class="logo_shadow"></div-->
                 <nav>
                     <ul id="topNav">
                         <li class="nav1"><a href="<?php print $base_path.$prefix;?>#c_photowall">APP</a></li>
                         <li class="nav2"><a href="<?php print $base_path.$prefix;?>#c_readwatch">READ+WATCH</a></li>  
-                        <li class="nav3"><a href="<?php print $base_path.$prefix;?>#c_playmake">SHOP</a></li>
-                        <li class="nav4"><a href="<?php print $base_path.$prefix;?>#c_friends">FAN FUN</a></li>
-                        <li class="nav5"><a href="<?php print $base_path.$prefix;?>#c_upclub">BOOMI’S CREATOR</a></li>
+                        <li class="nav3"><a href="<?php print $base_path.$prefix;?>#c_playmake">Play&Make</a>
+                            <ul>
+                                <li class="nav3_1"><a href="#c_playmake">Printing</a></li>
+                                <li class="nav3_2"><a href="#c_storyidea">Story Idea</a></li>
+                                <!--li class="nav3_3"><a href="#c_storyidea">Download</a></li-->
+                            </ul>
+
+                        </li>
+                        <li class="nav4"><a href="<?php print $base_path.$prefix;?>#c_friends">Friends</a></li>
+                        <li class="nav5"><a href="<?php print $base_path.$prefix;?>#c_upclub">Club</a></li>
                     </ul>
                 </nav>
                 <?php if($user->uid == 0):?>
@@ -49,6 +61,7 @@ $club_nodes = node_load_multiple(array(), array('type' => 'club','language' => $
     <div class="section_container">
         <section class="section_box" id="section_1">
             <section id="photowall_home">
+
                 <div class="section_wrap">
                     <?php 
 		        		if($prefix=='cn')
@@ -71,7 +84,8 @@ $club_nodes = node_load_multiple(array(), array('type' => 'club','language' => $
 	                    <div class="login_btn2 login_btn"><?php print t('Login');?></div>
 	                    <div class="reg_btn2 register_btn"><?php print t('Register');?></div>
 	                    <div class="download"><a style="display:block;margin:0 0 0 8px;" title="<?php print t('Download BOOMi Photo Fun APP');?>" target="_blank" href="https://itunes.apple.com/us/app/boomis-photo-fun!-cute-photo/id541484734?ls=1&mt=8"><img src="images/appicontop.gif" /></a><a target="_blank" href="https://itunes.apple.com/us/app/boomis-photo-fun!-cute-photo/id541484734?ls=1&mt=8"><img src="images/appicon2.png" /></a></div>
-	 					<?php else:?>
+	 					<div class="qrcode"><img src="<?php print $base_path;?>pic/qrcode.gif" /></div>
+                        <?php else:?>
 		                <div class="header"><img src="<?php print t('images/photowall_left_title.gif');?>" /></div>
 	                    <div class="avator">
 	                    	<div class="change_avator"><?php print t('Change<br/>Profile<br/>Pic');?></div>
@@ -154,19 +168,92 @@ $club_nodes = node_load_multiple(array(), array('type' => 'club','language' => $
             </section>
         </section>
         <section class="section_box" id="section_2">
-        	<div class="section_wrap">
-	        	<div class="slider_wrap">
-	        		<div class="read_watch_text"><span><?php print t('Click on the videos below to watch BOOMi in action + join BOOMi’s creator for a behind-the-scenes peek at his company. UP Studios! ')?></span></div>
-				    <?php
-						print views_embed_view('read_watch', 'block');
-					?>
-				</div>
-			</div>
+        	<div class="readwatch_wrap">
+            <!--div class="read_watch_text"><span><?php print t('Click on the videos below to watch BOOMi in action + join BOOMi’s creator for a behind-the-scenes peek at his company. UP Studios! ')?></span></div-->
+                <div class="readwatch_btn"><a class="active" href="#" id="btn_videos">Videos</a><a href="#" id="btn_comics">Comics</a></div>
+                <?php
+                    print views_embed_view('read_watch', 'block');
+                ?>
+                <?php
+                    print views_embed_view('read_watch', 'block_1');
+                ?>
+            </div>
+            <div id="watch_item_wrap"></div>
         </section>
+        <!-- play & make -->
         <section class="section_box" id="section_3">
-        	<div class="coming-soon-run">
-        		<div class="coming-soon-text"></div>
-        	</div>
+            <div id="section_printing">
+                <div class="printing_wrap">
+
+                    <div class="printing_top">
+                        <div class="printing_header"><img src="<?php print $base_path;?>pic/artgallery_title.png" /></div>
+                        <div class="printing_download_box">
+                            <div class="printing_step">1</div>
+                            <h3>Download sketch</h3>
+                            <div class="printing_download_carousel">
+                                <div class="printing_download_item">
+                                    <a class="img" href="#"><img src="<?php print $base_path;?>pic/sketch.jpg" /></a>
+                                    <a class="download" href="#">Download</a>
+                                </div>
+                                <div class="printing_download_item">
+                                    <a class="img" href="#"><img src="<?php print $base_path;?>pic/sketch.jpg" /></a>
+                                    <a class="download" href="#">Download</a>
+                                </div>
+                                <div class="printing_download_item">
+                                    <a class="img" href="#"><img src="<?php print $base_path;?>pic/sketch.jpg" /></a>
+                                    <a class="download" href="#">Download</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <form id="from_upload_print" name="upload_print" method="post" enctype="multipart/form-data" action="<?php print $base_path; ?>superboomi_service/printing">
+
+                            <div class="printing_step">2</div>
+                            <div class="icon_boomi"><img src="<?php print $base_path;?>pic/si_boomi.png" /></div>
+                            <?php if($user->uid): ?>
+                                <div class="file"><input type="file" name="field_image" id="field_image" /></div>
+                                <div class="upload">
+                                    <input name="" type="submit" value="Send" />
+                                    <a href="###">Select a new one</a>
+                                </div>
+                                <div class="errorMsg"><?php print t('Select your printing');?></div>
+                                <div class="loadingMsg">Uploading...<br/><img src="<?php print $base_path;?>images/uploading.gif" /></div>
+                                <div id="printing_sent"><?php print t('Please wait BOOMi to approve your great work! <br /><a href="###">I have another printing!</a>');?></div>
+                            <?php else:?>
+                                <a href="javascript:void(0)" class="login_btn">login</a>
+                                <a href="javascript:void(0)" class="register_btn">Register</a>
+                            <?php endif;?>
+                        </form>
+                    </div>
+
+                    <div class="clear"></div>
+                    <div id="printing_list"></div>
+
+                </div>
+            </div>
+
+            <div id="section_storyidea">
+                <form id="form_storyidea" name="form_storyidea" method="post" action="javascript:void(0)">
+                    <div>
+                        <div class="icon_idea"><img src="<?php print $base_path;?>pic/si_idea.png" /></div>
+                        <div class="icon_boomi"><img src="<?php print $base_path;?>pic/si_boomi.png" /></div>
+                        <div id="storyidea_fields">
+
+                            <?php if($user->uid): ?>
+                                <textarea name="body" class="idea_body" cols="41"></textarea>
+                                <input type="submit" value="Send" class="submit" />
+                                <div class="errorMsg"><?php print t('Blank is not a good idea!');?></div>
+                                <div class="loadingMsg"><?php print t('Your idea is on the way, please wait a while!');?></div>
+                            <?php else: ?>
+                                <div class="login"><a href="###" class="login_btn">Login</a> or <a href="###" class="register_btn">Register</a> Now! Write your great idea!</div>
+                            <?php endif;?>
+                        </div>
+                        <div id="storyidea_sent"><?php print t('Please wait to approve your great idea! <a href="###">I have another story idea!</a>');?></div>
+                    </div>
+                </form>
+                <div id="storyidea_list"></div>
+            </div>
         </section>
 		<section class="section_box" id="section_4">
         	<?php 

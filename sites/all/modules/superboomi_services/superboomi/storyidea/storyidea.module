@@ -38,3 +38,4 @@ function storyidea_services_view_alter($output){
         }
     }
 }
+

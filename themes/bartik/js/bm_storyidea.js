@@ -56,7 +56,7 @@ $('#form_storyidea').submit(function(e){
     loadingMsg.fadeIn(200);
     submitBtn.attr('disabled','disabled');
     $.Storyidea().create(storyBody,function(res){
-        $('#form_storyidea').fadeOut(400);
+        $('#storyidea_fields').fadeOut(400);
         $('#storyidea_sent').delay(400).fadeIn(400);
         submitBtn.removeAttr('disabled');
         loadingMsg.fadeOut();
@@ -70,15 +70,16 @@ $('#form_storyidea').submit(function(e){
 $('#storyidea_sent a').click(function(e){
     e.preventDefault();
     $('#storyidea_sent').fadeOut(400);
-    $('#form_storyidea').delay(400).fadeIn(400);
+    $('#storyidea_fields').delay(400).fadeIn(400);
     $('#form_storyidea').find('.idea_body').val('');
 });
 
 
 
 // Index ideas views
-var tpl_ideaItem = _.template('<div class="storyidea_item color_<%= randomId %>"> <div class="body"><%= body %></div><div class="name"><img src="<%= avatar %>" /><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like flagged_<%= flagged %>"><%= likeCounter %></div></div>');
+var tpl_ideaItem = _.template('<div class="storyidea_item color_<%= randomId %>"> <div class="body"><span class="ellipsis_text"><%= body %></span></div><div class="name"><img src="<%= avatar %>" /><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like flagged_<%= flagged %>"><%= likeCounter %></div></div>');
 $.Storyidea().index(0, function(res){
+
     var storyIdeaList = $('#storyidea_list');
     for(index in res)
     {
@@ -109,16 +110,7 @@ var bindStoryIdeaEvents = function(){
        if(flagged === 'false')
        {
            $(this).click(function(){
-               var nid = $(this).attr('data-nid');
-               var count = parseInt($(this).html());
-               var _this = $(this);
-               $.Like().like(nid, _global_uid ,function(res){ //TODO
-                   _this.addClass('flagged');
-                   count++;
-                   _this.html(count);
-               },function(res){
-                   console.log(res);
-               });
+               _likeIt($(this));
            });
        }
        else
@@ -126,6 +118,45 @@ var bindStoryIdeaEvents = function(){
            $(this).addClass('flagged');
        }
     });
+    $('.storyidea_item .body').click(function(){
+
+        $.fancybox( {
+            openMethod : 'dropIn',
+            scrolling : false,
+            content: $('<div class="storyidea_popup"></div>').append($(this).parent().html()),
+            minWidth: 400,
+            maxWidth: 600,
+            helpers: {
+                overlay : {
+                    closeClick : true,  // if true, fancyBox will be closed when user clicks on the overlay
+                    speedOut   : 200,   // duration of fadeOut animation
+                    showEarly  : true,  // indicates if should be opened immediately or wait until the content is ready
+                    locked     : false   // if true, the content will be locked into overlay
+                },
+                title : {
+                    type : 'float' // 'float', 'inside', 'outside' or 'over'
+                }
+            },
+            afterShow: function(){
+                $('.storyidea_popup').find('.like').click(function(){
+                    _likeIt($(this));
+                });
+            }
+        } );
+    });
+
+    var _likeIt = function(_this){
+        var nid = _this.attr('data-nid');
+        var count = parseInt(_this.html());
+        var _this = _this;
+        $.Like().like(nid, _global_uid ,function(res){ //TODO
+            count++;
+            $('.like[data-nid="'+_this.attr('data-nid')+'"]').html(count).addClass('flagged_true flagged').unbind('click');
+        },function(res){
+            console.log(res);
+        });
+    }
+
     // Initialize Isotope
     $('#storyidea_list').isotope({
         resizable: false,
@@ -138,6 +169,7 @@ var bindStoryIdeaEvents = function(){
 var bindStoryIdeaInit = function(){
     $('#form_storyidea .idea_body').focus(function(){
         $(this).addClass('opened');
+        $('#form_storyidea .errorMsg').fadeOut();
     });
     $('#form_storyidea .idea_body').blur(function(){
         $(this).removeClass('opened');
@@ -155,3 +187,28 @@ var bindStoryIdeaInit = function(){
 
 
 bindStoryIdeaInit();
+
+(function ($, F) {
+    F.transitions.dropIn = function() {
+        var endPos = F._getPosition(true);
+
+        endPos.top = (parseInt(endPos.top, 10) - 200) + 'px';
+
+        F.wrap.css(endPos).show().animate({
+            top: '+=200px'
+        }, {
+            duration: F.current.openSpeed,
+            complete: F._afterZoomIn
+        });
+    };
+
+    F.transitions.dropOut = function() {
+        F.wrap.removeClass('fancybox-opened').animate({
+            top: '-=200px'
+        }, {
+            duration: F.current.closeSpeed,
+            complete: F._afterZoomOut
+        });
+    };
+
+}(jQuery, jQuery.fancybox));
