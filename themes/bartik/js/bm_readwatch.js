@@ -41,7 +41,6 @@ $('#watchflip1 a').click(function(e){
 
 $('#watchflip2 a').unbind('click');
 $('#watchflip2 a').click(function(e){
-    console.log(2);
     e.preventDefault();
     var nid = $(this).attr('data-nid');
     $('#watch_item_wrap').css({width:-$(window).width()});
@@ -63,6 +62,7 @@ var bindWatchEvents = function(){
            $(this).empty();
         });
     });
+    console.log(user);
     $('#watch_item_wrap').find('.like').click(function(){
         _likeIt($(this));
     });

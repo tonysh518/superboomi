@@ -5,7 +5,7 @@
     <ignored path="superboomi.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/page--storyidea.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368254787499" ignored="false" />
-    <file path="/bm_storyidea.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368270343233" ignored="false" />
+    <file path="/bm_storyidea.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368426441055" ignored="false" />
     <file path="/style.css" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368377207521" ignored="false" />
     <file path="/a.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367731198812" ignored="false" />
     <file path="/storyidea.module" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368281724682" ignored="false" />
@@ -16,7 +16,7 @@
     <file path="/html.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367744875259" ignored="false" />
     <file path="/bm_like.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367745050005" ignored="false" />
     <file path="/views-view-fields--read-watch--block.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367750555639" ignored="false" />
-    <file path="/bm_readwatch.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368374250439" ignored="false" />
+    <file path="/bm_readwatch.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368426332065" ignored="false" />
     <file path="/page--readwatch.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367752970582" ignored="false" />
     <file path="/import-user.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367756996325" ignored="false" />
     <file path="/import-twitter.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1367766196064" ignored="false" />
@@ -37,7 +37,7 @@
     <file path="/demo.html" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368280741785" ignored="false" />
     <file path="/node--comics.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368286647371" ignored="false" />
     <file path="/views-view-fields--read-watch--block-1.tpl.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368285706250" ignored="false" />
-    <file path="$PROJECT_DIR$/../huaya/css/style.css" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368349808346" ignored="false" />
+    <file path="$PROJECT_DIR$/../huaya/css/style.css" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368425257639" ignored="false" />
     <file path="$PROJECT_DIR$/../huaya/data/application/models/message.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368344336021" ignored="false" />
     <file path="/message.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368346683738" ignored="false" />
     <file path="$PROJECT_DIR$/../huaya/data/application/controllers/news.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368344319473" ignored="false" />
@@ -47,7 +47,6 @@
     <file path="$PROJECT_DIR$/../huaya/data/application/bundles.php" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368346236177" ignored="false" />
     <file path="$PROJECT_DIR$/../huaya/js/pager.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368365430074" ignored="false" />
     <file path="/pager.js" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368365376338" ignored="false" />
-    <file path="$PROJECT_DIR$/../pavilion/sites/all/themes/bartik/css/style.css" changelist="9e411461-9eb6-4f6d-82e6-d2467f53d0f8" time="1368367954220" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,35 +66,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="page--front.tpl.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="page--front.tpl.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--front.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="59" selection-start="14071" selection-end="14071" vertical-scroll-proportion="0.40667808">
+            <state line="294" column="35" selection-start="17160" selection-end="17160" vertical-scroll-proportion="-199.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/templates/html.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="23" selection-start="1328" selection-end="1339" vertical-scroll-proportion="-16.964285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bm_like.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_like.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#5;n#div#0;n#div#0;n#section#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#4;n#div#1;n#section#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#li#0;n#ul#0;n#div#3;n#div#1;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/css/style.css">
+      <file leaf-file-name="bm_storyidea.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1085" column="88" selection-start="71113" selection-end="71113" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bm_readwatch.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="35" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="125" column="63" selection-start="3643" selection-end="3643" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,10 +109,30 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/bartik/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="25" selection-start="3384" selection-end="3384" vertical-scroll-proportion="-13.615385">
+            <state line="1339" column="90" selection-start="43137" selection-end="43289" vertical-scroll-proportion="-15.0">
               <folding>
-                <marker date="1368370076000" expanded="false" signature="27828:27842" placeholder="..." />
+                <marker date="1368426231000" expanded="true" signature="27804:27818" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bm_readwatch.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="22" selection-start="2326" selection-end="2326" vertical-scroll-proportion="-30.346153">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../pavilion/sites/all/themes/bartik/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="129" column="126" selection-start="8599" selection-end="8599" vertical-scroll-proportion="0.6354515">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,9 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/themes/bartik/js/bm_printing.js" />
-        <option value="$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js" />
-        <option value="$PROJECT_DIR$/themes/bartik/readwatch/views-view-unformatted--read-watch--block.tpl.php" />
         <option value="$PROJECT_DIR$/themes/bartik/templates/friend_cn.php" />
         <option value="$PROJECT_DIR$/themes/bartik/templates/friend_en.php" />
         <option value="$PROJECT_DIR$/themes/bartik/js/nivo-slider/demo/demo.html" />
@@ -133,16 +156,20 @@
         <option value="$PROJECT_DIR$/themes/bartik/readwatch/views-view-unformatted--read-watch--block-1.tpl.php" />
         <option value="$PROJECT_DIR$/themes/bartik/readwatch/views-view-fields--read-watch--block-1.tpl.php" />
         <option value="$PROJECT_DIR$/themes/bartik/templates/node--comics.tpl.php" />
+        <option value="$PROJECT_DIR$/themes/bartik/templates/page--front.tpl.php" />
         <option value="$PROJECT_DIR$/themes/bartik/js/main.js" />
         <option value="$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js" />
+        <option value="$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js" />
+        <option value="$PROJECT_DIR$/../pavilion/themes/bartik/css/style.css" />
         <option value="$PROJECT_DIR$/themes/bartik/css/style.css" />
-        <option value="$PROJECT_DIR$/themes/bartik/templates/page--front.tpl.php" />
+        <option value="$PROJECT_DIR$/../pavilion/sites/all/themes/bartik/css/style.css" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+    <option name="x" value="20" />
+    <option name="y" value="25" />
     <option name="width" value="2540" />
     <option name="height" value="1357" />
   </component>
@@ -172,6 +199,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,7 +340,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,8 +348,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../brdg" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -350,14 +377,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2540" height="1357" extended-state="0" />
+    <frame x="20" y="25" width="2540" height="1357" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979952" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2638332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.266239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -435,15 +462,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/jquery.nivo.slider.pack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/bartik/bartik.info">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="40" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
@@ -453,33 +471,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/superboomi_services/superboomi/storyidea/storyidea.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1071" selection-end="1071" vertical-scroll-proportion="-27.821428">
-          <folding />
-        </state>
+        <state line="41" column="0" selection-start="1071" selection-end="1071" vertical-scroll-proportion="-27.821428" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view--read-watch--block.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view-unformatted--read-watch--block.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="8" selection-start="0" selection-end="226" vertical-scroll-proportion="-6.107143">
-          <folding />
-        </state>
+        <state line="9" column="8" selection-start="0" selection-end="226" vertical-scroll-proportion="-6.107143" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../huaya/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/node.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view-fields--read-watch--block.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="5" selection-start="0" selection-end="351" vertical-scroll-proportion="0.13013698" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_like.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
@@ -488,74 +508,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/node.tpl.php">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--front.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="294" column="35" selection-start="17160" selection-end="17160" vertical-scroll-proportion="-199.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/node--comics.tpl.php">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/html.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view-fields--read-watch--block.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="5" selection-start="0" selection-end="351" vertical-scroll-proportion="0.13013698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view-fields--read-watch--block-1.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="66" selection-start="72" selection-end="72" vertical-scroll-proportion="0.032176122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/readwatch/views-view-unformatted--read-watch--block-1.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
+        <state line="25" column="23" selection-start="1328" selection-end="1339" vertical-scroll-proportion="-16.964285">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/bartik/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="25" selection-start="3384" selection-end="3384" vertical-scroll-proportion="-13.615385">
+        <state line="1339" column="90" selection-start="43137" selection-end="43289" vertical-scroll-proportion="-15.0">
           <folding>
-            <marker date="1368370076000" expanded="false" signature="27828:27842" placeholder="..." />
+            <marker date="1368426231000" expanded="true" signature="27804:27818" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_storyidea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="35" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.0">
+        <state line="125" column="63" selection-start="3643" selection-end="3643" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pavilion/themes/bartik/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="9" selection-start="904" selection-end="904" vertical-scroll-proportion="0.031430934">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/bartik/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1085" column="88" selection-start="71113" selection-end="71113" vertical-scroll-proportion="0.0">
+        <state line="48" column="57" selection-start="3612" selection-end="3612" vertical-scroll-proportion="0.5401338">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page--front.tpl.php">
+    <entry file="file://$PROJECT_DIR$/themes/bartik/js/bm_readwatch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="59" selection-start="14071" selection-end="14071" vertical-scroll-proportion="0.40667808">
+        <state line="64" column="22" selection-start="2326" selection-end="2326" vertical-scroll-proportion="-30.346153">
           <folding>
-            <element signature="n#style#0;n#a#0;n#div#5;n#div#0;n#div#0;n#section#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#4;n#div#1;n#section#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#li#0;n#ul#0;n#div#3;n#div#1;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pavilion/sites/all/themes/bartik/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="126" selection-start="8599" selection-end="8599" vertical-scroll-proportion="0.6354515">
+          <folding />
         </state>
       </provider>
     </entry>

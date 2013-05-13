@@ -104,20 +104,28 @@ $.Storyidea().index(0, function(res){
 
 /* Events */
 var bindStoryIdeaEvents = function(){
-    $('#storyidea_list .like').unbind('click');
-    $('#storyidea_list .like').each(function(){
-       var flagged = $(this).attr('data-flagged');
-       if(flagged === 'false')
-       {
-           $(this).click(function(){
-               _likeIt($(this));
-           });
-       }
-       else
-       {
-           $(this).addClass('flagged');
-       }
-    });
+
+    if(userid){
+        $('#storyidea_list .like').unbind('click');
+        $('#storyidea_list .like').each(function(){
+            var flagged = $(this).attr('data-flagged');
+            if(flagged === 'false')
+            {
+                $(this).click(function(){
+                    _likeIt($(this));
+                });
+            }
+            else
+            {
+                $(this).addClass('flagged');
+            }
+        });
+    }
+    else
+    {
+        $('#storyidea_list .like').attr('title','Login to vote.');
+        $('#storyidea_list .like').tipsy({live: true, gravity: 's'});
+    }
     $('.storyidea_item .body').click(function(){
 
         $.fancybox( {

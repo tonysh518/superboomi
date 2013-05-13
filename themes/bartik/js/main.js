@@ -133,7 +133,6 @@ $(document).ready(function(){
 	});
 
     $('#topNav li').hover(function(){
-        console.log(1);
         $(this).find('ul').fadeIn(200);
     },function(){
         $(this).find('ul').fadeOut(200);

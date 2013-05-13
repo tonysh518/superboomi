@@ -45,8 +45,8 @@ header nav ul ul {display:none;position:absolute;width:151px;top:62px;width:auto
 header nav li.nav3 ul li {float:none;padding:10px 0;margin:0;}
 header nav li.nav3 ul li a {background:url(../images/nav3_sub.gif) no-repeat;height:15px;width:151px;}
 header nav li.nav3 ul li a:hover {opacity:0.6;}
-header nav li.nav3 ul li.nav3_1 a {background-position:15px -15px;}
-header nav li.nav3 ul li.nav3_2 a {background-position:25px -50px;}
+header nav li.nav3 ul li.nav3_1 a {background-position:13px -15px;}
+header nav li.nav3 ul li.nav3_2 a {background-position:23px -50px;}
 
 header .userpanel {font-size:13px;color:#a5a5a5; position:absolute;top:8px;right:13px;font-family:'Chalkduster', 'Comic Sans MS';}
 header .userpanel span {color:#666; cursor:pointer;}
