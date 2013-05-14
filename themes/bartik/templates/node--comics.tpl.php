@@ -1,5 +1,5 @@
 <a class="back" href="javascript:parent.closeWatchItem();">Back to list</a>
-<div class="slider-wrapper theme-default">
+<div class="slider-wrapper theme-default" style="padding:0 0 80px 0;">
     <div id="slider" class="nivoSlider">
         <?php foreach($node->field_image['und'] as $image_item){
             $big_path = image_style_url('600x400',$image_item['uri']);

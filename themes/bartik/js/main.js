@@ -9,6 +9,7 @@ $(document).ready(function(){
 	loadImg();
 	loadCount();
 	$("#photowall_banner a").prettyPhoto({'default_width':900,'default_height':271,social_tools:''});
+    $('.photowall_right .box').fadeIn();
 	// Address
 	$.address.change(function(event) {  
 		if(event.pathNames[0] == 'c_home')
@@ -871,7 +872,8 @@ $(document).ready(function(){
 	
 	
 	
-	$('.photowall_category_icons a,.cate_cover_item a').click(function(){
+	$('.photowall_category_icons a,.cate_cover_item a').click(function(e){
+        e.preventDefault();
 		var url = $(this).attr('href');
 		$('.photowall_category_icons a').removeClass('actived');
 		$(this).addClass('actived');
@@ -884,17 +886,14 @@ $(document).ready(function(){
 			  isDestroyed: false,
 			  isDone: false,
 			  isDuringAjax: false
-		   },
-		   loading: {
-				msg: $("<div style=\"display: none;\" id=\"infscr-loading\"><img alt=\"Loading...\" src=\"http://www.superboomi.com/images/photowall_loading.gif\"><div> </div></div>")   
-			}
+		   }
 		});
 		if($(this).attr('original-title')=="All")
 		{
 			$('.cate_cover').fadeIn();
 		}
 		$container.fadeOut(function(){
-			$container.masonry( 'destroy'); 
+			$container.masonry( 'destroy');
 			$(this).empty();
 			$.ajax({
 			  url: url,
@@ -904,25 +903,25 @@ $(document).ready(function(){
 				//console.log(msg);
 				$('.overlay2').fadeOut();
 				$('#messsage_box').fadeOut();
-				$container.infinitescroll('destroy');
 				$newElems = $(msg).find('.box').css({ opacity: 0 });
 				$container = $('#photowall_container').append($newElems);
 				$newElems.imagesLoaded(function(){
 				$("a[rel^='popup']").prettyPhoto({'default_width':400,'default_height':430,iframe_markup: '<iframe src ="{path}" width="{width}" height="{height}" frameborder="no" scrolling="no"></iframe>',social_tools:''});			  
 				  $newElems.animate({ opacity: 1 });
 				  $container.fadeIn();
+                    $('.photowall_right .box').fadeIn();
 				$container.infinitescroll({
 				  itemSelector : '.box',     // selector for all items you'll retrieve
 				  loading: {
-					  msgText: ' ',
-					  finishedMsg: 'End',
-					  img: 'http://www.superboomi.com/images/photowall_loading.gif'
+					  msgText: 'Loading'
 					},
 					state: {
 					  currPage: 0 // The number of the first comment page loaded, you can generate this number dynamically to save changing it manually
 					},
 					path: [url+'?page=','']
-				  }
+				  },function(){
+                        $('#photowall_container .box').delay(1000).fadeIn();
+                    }
 				);
 				$container.infinitescroll('bind');
 				
@@ -1313,9 +1312,8 @@ $("a[rel^='popup']").prettyPhoto({'default_width':400,'default_height':430,ifram
 		  itemSelector : '.box',     // selector for all items you'll retrieve
 		  //debug: true,
 		  loading: {
-			  msgText: ' ',
-			  finishedMsg: 'End',
-			  img: 'http://www.superboomi.com/images/photowall_loading.gif'
+			  msgText: 'Loading',
+			  img: 'http://www.superboomi.com/images/space.gif'
 			},
 			state: {
 			  currPage: 0 // The number of the first comment page loaded, you can generate this number dynamically to save changing it manually
@@ -1329,10 +1327,12 @@ $("a[rel^='popup']").prettyPhoto({'default_width':400,'default_height':430,ifram
 		  // trigger Masonry as a callback
 		  function( newElements ) {
 			// hide new items while they are loading
-			var $newElems = $( newElements ).css({ opacity: 1 });
 			// ensure that images load before adding to masonry layout
+
+            $newElems = $(newElements).find('.box').hide();
 			$newElems.imagesLoaded(function(){
 			  // show elems now they're ready
+                $('#photowall_container .box').delay(1000).fadeIn();
 				$("a[rel^='popup']").prettyPhoto({'default_width':400,'default_height':430,iframe_markup: '<iframe src ="{path}" width="{width}" height="{height}" frameborder="no" scrolling="no"></iframe>',social_tools:''});	
 				if(userid == 0)
 				{
@@ -1406,6 +1406,7 @@ function move2readwath(){
 	$('.logo_bg div').fadeOut();
 	$('.logo_bg div').eq(2).fadeIn();
 	currentIndex = 1;
+    $('.photowall_left').fadeOut();
 	var $container = $('#photowall_container');
 	$container.infinitescroll('destroy');
 	$container.infinitescroll({                      
@@ -1429,6 +1430,7 @@ function move2playmake(){
 	$('.logo_bg div').fadeOut();
 	$('.logo_bg div').eq(3).fadeIn();
 	currentIndex = 2;
+    $('.photowall_left').fadeOut();
 	var $container = $('#photowall_container');
 	$container.infinitescroll('destroy');
 	$container.infinitescroll({                      
@@ -1453,6 +1455,7 @@ function move2storyidea(){
     $('.logo_bg div').fadeOut();
     $('.logo_bg div').eq(3).fadeIn();
     currentIndex = 2;
+    $('.photowall_left').fadeOut();
     var $container = $('#photowall_container');
     $container.infinitescroll('destroy');
     $container.infinitescroll({
@@ -1477,6 +1480,7 @@ function move2friends(){
 	$('.logo_bg div').fadeOut();
 	$('.logo_bg div').eq(4).fadeIn();
 	currentIndex = 3;
+    $('.photowall_left').fadeOut();
 	var $container = $('#photowall_container');
 	$container.infinitescroll('destroy');
 	$container.infinitescroll({                      
@@ -1499,6 +1503,7 @@ function move2club(){
 	$('.logo_bg div').fadeOut();
 	$('.logo_bg div').eq(5).fadeIn();
 	currentIndex = 4;
+    $('.photowall_left').fadeOut();
 	var $container = $('#photowall_container');
 	$container.infinitescroll('destroy');
 	$container.infinitescroll({                      

@@ -35,6 +35,7 @@ $('#watchflip1 a').click(function(e){
         $('#watch_item_wrap').delay(500).animate({'left':0},400);
         var watchItemWidth = $('#watch_item_wrap .watch_item').width();
         $('#watch_item_wrap').find('iframe').height(watchItemWidth*0.6);
+        $('.readwatch_wrap').hide();
         bindWatchEvents();
     });
 });
@@ -43,17 +44,21 @@ $('#watchflip2 a').unbind('click');
 $('#watchflip2 a').click(function(e){
     e.preventDefault();
     var nid = $(this).attr('data-nid');
-    $('#watch_item_wrap').css({width:-$(window).width()});
-    $('#watch_item_wrap').append('<iframe width="100%" src="node/'+ nid + '"/>');
+    $('#watch_item_wrap').css({width:-$(window).width(),overflow:'hidden'});
+    $('#watch_item_wrap').append('<iframe id="comic_iframe" width="100%" src="node/'+ nid + '"/>');
     var height = $(window).height();
     $('#watch_item_wrap').find('iframe').height(height);
     $('#watch_item_wrap').delay(500).animate({'left':0},400);
+    $('.readwatch_wrap').hide();
 });
 
 var closeWatchItem = function(){
     $('#watch_item_wrap').animate({'left':-$(window).width()},400,function(){
         $(this).empty();
-    });
+    }).css({overflow:'auto'});
+
+    $('.readwatch_wrap').show();
+    $('#watchflip1,#watchflip2').isotope('reLayout');
 }
 
 var bindWatchEvents = function(){
@@ -61,8 +66,10 @@ var bindWatchEvents = function(){
         $('#watch_item_wrap').animate({'left':-$(window).width()},400,function(){
            $(this).empty();
         });
+
+        $('.readwatch_wrap').show();
+        $('#watchflip1,#watchflip2').isotope('reLayout');
     });
-    console.log(user);
     $('#watch_item_wrap').find('.like').click(function(){
         _likeIt($(this));
     });
@@ -114,6 +121,8 @@ var bindWatchInit = function(){
 
         var watchItemWidth = $('#watch_item_wrap .watch_item').width();
         $('#watch_item_wrap').find('iframe').height(watchItemWidth*0.6);
+        var height = $(window).height();
+        $('#watch_item_wrap').find('#comic_iframe').height(height);
     });
     $(window).trigger("debouncedresize");
 }

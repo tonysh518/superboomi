@@ -169,7 +169,7 @@ var bindStoryIdeaEvents = function(){
     $('#storyidea_list').isotope({
         resizable: false,
         masonry: {
-            columnWidth: 310
+            columnWidth: 320
         }
     });
 }
@@ -184,11 +184,16 @@ var bindStoryIdeaInit = function(){
     });
 
     $(window).on("debouncedresize",function(){
-        var columns = Math.floor( ( $('body').width() - 20) / 310 );
-        $('#storyidea_list').width( columns * 310 );
+        var columns = Math.floor( ( $('body').width() - 30) / 320 );
+        $('#storyidea_list').width( columns * 320 );
         setTimeout(function(){
             $('#storyidea_list').isotope('reLayout');
         },300);
+        if(window.location.href.indexOf('c_storyidea') > 0)
+        {
+            var section_printing_height = $('#section_printing').height();
+            $('#section_printing').css({'margin-top':-section_printing_height});
+        }
     });
     $(window).trigger("debouncedresize");
 }

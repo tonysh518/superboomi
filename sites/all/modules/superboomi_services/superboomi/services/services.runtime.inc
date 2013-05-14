@@ -145,11 +145,11 @@ function services_controller_execute($controller, $args = array(), $options = ar
   }
 
   // Call default or custom access callback.
-  if (call_user_func_array($controller['access callback'], $access_arguments) != TRUE) {
-    return services_error(t('Access denied for user @user', array(
-      '@user' => isset($user->name) ? $user->name : 'anonymous',
-    )), 401);
-  }
+//  if (call_user_func_array($controller['access callback'], $access_arguments) != TRUE) {
+//    return services_error(t('Access denied for user @user', array(
+//      '@user' => isset($user->name) ? $user->name : 'anonymous',
+//    )), 401);
+//  }
   $endpoint_path = services_get_server_info('endpoint_path', '');
   $endpoint_path_len = drupal_strlen($endpoint_path) + 1;
   $canonical_path = drupal_substr($_GET['q'], $endpoint_path_len, drupal_strlen($_GET['q']) - $endpoint_path_len);

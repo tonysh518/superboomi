@@ -88,7 +88,7 @@ $.Printing().index(0, function(res){
         printingList.append(tpl_printingItem({
             name:res[index].users_node_name,
             img:res[index].Image[0],
-            bigimg:res[index].Image[0].replace('styles/260x260/public/',''),
+            bigimg:res[index].Image[0].replace('styles/200x200/public/',''),
             likeCounter:res[index].flag_counts_node_count,
             nid:res[index].nid,
             flagged:res[index].views_php_5
@@ -141,6 +141,22 @@ var bindPrintingEvents = function(){
             columnWidth: 230
         }
     });
+
+    $('#printing_list .printing_item a').fancybox( {
+        openMethod : 'dropIn',
+        scrolling : false,
+        helpers: {
+            overlay : {
+                closeClick : true,  // if true, fancyBox will be closed when user clicks on the overlay
+                speedOut   : 200,   // duration of fadeOut animation
+                showEarly  : true,  // indicates if should be opened immediately or wait until the content is ready
+                locked     : false   // if true, the content will be locked into overlay
+            },
+            title : {
+                type : 'float' // 'float', 'inside', 'outside' or 'over'
+            }
+        }
+    } );
 }
 
 var bindStoryIdeaInit = function(){

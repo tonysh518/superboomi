@@ -192,16 +192,16 @@ drupal_add_js($base_path.'themes/bartik/js/bm_storyidea.js', array('scope' => 'f
                             <h3>Download sketch</h3>
                             <div class="printing_download_carousel">
                                 <div class="printing_download_item">
-                                    <a class="img" href="#"><img src="<?php print $base_path;?>pic/sketch.jpg" /></a>
-                                    <a class="download" href="#">Download</a>
+                                    <a class="img" target="_blank" href="<?php print $base_path;?>pic/sketch/1.zip"><img src="<?php print $base_path;?>pic/sketch/s1.jpg" /></a>
+                                    <a class="download" target="_blank" href="<?php print $base_path;?>pic/sketch/1.zip">Download</a>
                                 </div>
                                 <div class="printing_download_item">
-                                    <a class="img" href="#"><img src="<?php print $base_path;?>pic/sketch.jpg" /></a>
-                                    <a class="download" href="#">Download</a>
+                                    <a class="img" target="_blank" href="<?php print $base_path;?>pic/sketch/2.zip"><img src="<?php print $base_path;?>pic/sketch/s2.jpg" /></a>
+                                    <a class="download" target="_blank" href="<?php print $base_path;?>pic/sketch/2.zip">Download</a>
                                 </div>
                                 <div class="printing_download_item">
-                                    <a class="img" href="#"><img src="<?php print $base_path;?>pic/sketch.jpg" /></a>
-                                    <a class="download" href="#">Download</a>
+                                    <a class="img" target="_blank" href="<?php print $base_path;?>pic/sketch/3.zip"><img src="<?php print $base_path;?>pic/sketch/s3.jpg" /></a>
+                                    <a class="download" target="_blank" href="<?php print $base_path;?>pic/sketch/3.zip">Download</a>
                                 </div>
 
                             </div>

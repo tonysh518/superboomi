@@ -5,15 +5,14 @@
 * Implementation of hook_services_resources().
 */
 function storyidea_services_resources() {
+
   return array(
     'storyidea' => array(
       'create' => array(
         'help' => 'Creates a sotryidea',
         'file' => array('file' => 'inc', 'module' => 'storyidea'),
         'callback' => '_storyidea_create',
-        'access callback' => '_storyidea_access',
-        'access arguments' => array('create'),
-        'access arguments append' => TRUE,
+        'access callback' => 'user_access',
         'args' => array(
           array(
             'name' => 'body',
