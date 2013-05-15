@@ -1406,7 +1406,7 @@ function move2readwath(){
 	$('.logo_bg div').fadeOut();
 	$('.logo_bg div').eq(2).fadeIn();
 	currentIndex = 1;
-    $('.photowall_left').fadeOut();
+    $('.photowall_left').hide();
 	var $container = $('#photowall_container');
 	$container.infinitescroll('destroy');
 	$container.infinitescroll({                      
@@ -1430,7 +1430,7 @@ function move2playmake(){
 	$('.logo_bg div').fadeOut();
 	$('.logo_bg div').eq(3).fadeIn();
 	currentIndex = 2;
-    $('.photowall_left').fadeOut();
+    $('.photowall_left').hide();
 	var $container = $('#photowall_container');
 	$container.infinitescroll('destroy');
 	$container.infinitescroll({                      
@@ -1455,7 +1455,7 @@ function move2storyidea(){
     $('.logo_bg div').fadeOut();
     $('.logo_bg div').eq(3).fadeIn();
     currentIndex = 2;
-    $('.photowall_left').fadeOut();
+    $('.photowall_left').hide();
     var $container = $('#photowall_container');
     $container.infinitescroll('destroy');
     $container.infinitescroll({
@@ -1480,7 +1480,7 @@ function move2friends(){
 	$('.logo_bg div').fadeOut();
 	$('.logo_bg div').eq(4).fadeIn();
 	currentIndex = 3;
-    $('.photowall_left').fadeOut();
+    $('.photowall_left').hide();
 	var $container = $('#photowall_container');
 	$container.infinitescroll('destroy');
 	$container.infinitescroll({                      

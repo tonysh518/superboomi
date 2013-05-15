@@ -42,11 +42,11 @@ header nav li.nav3:hover > a,header nav li.nav3 > a.actived {background-position
 header nav li.nav4:hover > a,header nav li.nav4 > a.actived {background-position:-442px -20px}
 header nav li.nav5:hover > a,header nav li.nav5 > a.actived {background-position:-564px -20px;margin:0;}
 header nav ul ul {display:none;position:absolute;width:150px;left:0px;margin:0;padding:0;}
-header nav li.nav3 ul li {background:#1991e2;float:none;padding:10px 0;margin:0 0 3px 0;}
+header nav li.nav3 ul li {background:#1991e2;float:none;padding:5px 0;margin:2px 0 5px 0;}
 header nav li.nav3 ul li a {background: url(../images/nav3_sub.gif) no-repeat;height:15px;width:151px;}
 header nav li.nav3 ul li a:hover {opacity:0.6;}
-header nav li.nav3 ul li.nav3_1 a {background-position:10px -15px;}
-header nav li.nav3 ul li.nav3_2 a {background-position:10px -50px;}
+header nav li.nav3 ul li.nav3_1 a {background-position:0px -15px;}
+header nav li.nav3 ul li.nav3_2 a {background-position:0px -50px;}
 
 header .userpanel {font-size:13px;color:#a5a5a5; position:absolute;top:8px;right:13px;font-family:'Chalkduster', 'Comic Sans MS';}
 header .userpanel span {color:#666; cursor:pointer;}

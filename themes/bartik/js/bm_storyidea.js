@@ -77,7 +77,7 @@ $('#storyidea_sent a').click(function(e){
 
 
 // Index ideas views
-var tpl_ideaItem = _.template('<div class="storyidea_item color_<%= randomId %>"> <div class="body"><span class="ellipsis_text"><%= body %></span></div><div class="name"><img src="<%= avatar %>" /><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like flagged_<%= flagged %>"><%= likeCounter %></div></div>');
+var tpl_ideaItem = _.template('<div class="storyidea_item color_<%= randomId %>"> <div class="body" data-content="<%= fullbody %>"><%= body %></div><div class="name"><img src="<%= avatar %>" /><%= name %></div><div data-flagged="<%= flagged %>" data-nid="<%= nid %>" class="like flagged_<%= flagged %>"><%= likeCounter %></div></div>');
 $.Storyidea().index(0, function(res){
 
     var storyIdeaList = $('#storyidea_list');
@@ -88,10 +88,16 @@ $.Storyidea().index(0, function(res){
             res[index].flag_counts_node_count = 0;
         }
         var randomId = Math.floor(Math.random()*3);
+        var substr = res[index].Body;
+        if(substr.length>100)
+        {
+            substr = substr.substring(0,100)+"...";
+        }
         storyIdeaList.append(tpl_ideaItem({
             randomId: randomId,
             name:res[index].users_node_name,
-            body:res[index].Body,
+            fullbody:res[index].Body,
+            body:substr,
             likeCounter:res[index].flag_counts_node_count,
             nid:res[index].nid,
             avatar:res[index].users_node_picture,
@@ -127,11 +133,14 @@ var bindStoryIdeaEvents = function(){
         $('#storyidea_list .like').tipsy({live: true, gravity: 's'});
     }
     $('.storyidea_item .body').click(function(){
-
+        $content = $('<div class="storyidea_popup"></div>').append($(this).parent().html());
+        $contentBody = $content.find('.body');
+        $contentBody.html($contentBody.attr('data-content'))
+        console.log($contentBody);
         $.fancybox( {
             openMethod : 'dropIn',
             scrolling : false,
-            content: $('<div class="storyidea_popup"></div>').append($(this).parent().html()),
+            content: $content,
             minWidth: 400,
             maxWidth: 600,
             helpers: {
